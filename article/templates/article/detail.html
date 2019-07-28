@@ -1,0 +1,16 @@
+{% for article in article_list %}    
+    <div>{{article.title}}</div>
+    <div>{{article.content}}</div>
+    <div>{{article.pub_date}}</div>
+    <div>{{article.stars}}</div>
+    <div>
+        <a href="{% url 'article:summary' article.id %}">summary</a>
+    </div>
+    <hr>
+    {% for summary in summary_list %}
+    <div>{{summary.content}}</div>
+    <div>Obj: {{summary.obj_count}}</div>
+    <div>Sbj: {{summary.sbj_count}}</div>
+    <hr>
+    {% endfor %}
+{% endfor %}
