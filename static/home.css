@@ -1,0 +1,456 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+
+/*기본 값*/
+
+.text .line_1,
+.line_2,
+.line_3 {
+    font-family: 'Song Myung', serif;
+    font-size: 1rem;
+    color: #000000;
+    text-align: left;
+    opacity: 0.87;
+}
+
+.text .line_2,
+.line_3 {
+    padding-top: 15px;
+}
+
+#writer {
+    padding-left: 24px;
+}
+
+#writer .by {
+    opacity: 0.6;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0;
+}
+
+#writer .name {
+    opacity: 0.6;
+    font-family: 'Noto Sans KR', serif;
+    font-size: 14px;
+    color: #000000;
+    letter-spacing: 0;
+}
+
+
+/*세줄 요약*/
+
+
+header {
+    width: 100%;
+}
+
+.header_container {
+    width: 1400px;
+    height: 80px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    /*    세로 가운데정렬*/
+}
+
+.header_container_nav {
+    width: 100%;
+    margin: 0 118px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo_tons {
+    width: 30px;
+    height: 30px;
+    background-color: #6f6f6f;
+}
+
+
+nav ul {
+    margin: 0;
+
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+}
+
+nav ul li {
+    text-align: right;
+    opacity: 0.6;
+    font-family: 'Noto Sans KR', serif;
+    font-size: 1rem;
+}
+
+nav ul li:nth-child(1) {
+    margin-left: 8px;
+}
+
+nav ul li:nth-child(2) {
+    padding-left: 64px;
+}
+
+.logo_pen {
+    width: 20px;
+    height: 20px;
+    background-color: #6f6f6f;
+}
+
+
+
+
+/* header */
+
+.wrapper {
+    width: 960px;
+    margin: 0 auto;
+}
+
+
+.upper_contents_container {
+    margin: 64px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title_1 {
+    font-family: 'Song Myung', serif;
+    font-size: 40px;
+    color: #000000;
+    letter-spacing: -0.9px;
+
+    padding-bottom: 32px;
+
+    height: 40px;
+}
+
+.title_2 {
+    opacity: 0.6;
+    font-family: 'Song Myung', serif;
+    font-size: 36px;
+    color: #000000;
+    letter-spacing: -0.81px;
+
+    height: 36px;
+}
+
+.title_3 {
+    opacity: 0.6;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 36px;
+    color: #000000;
+    letter-spacing: -0.81px;
+
+    height: 55px;
+    padding-top: 8px;
+}
+
+.illust_container {
+    width: 354px;
+    height: 162px;
+    opacity: 0.25;
+    background: #D8D8D8;
+}
+
+/* 소개멘트 ,일러스트 - upper_contents_container*/
+
+
+
+.card_container_wrapper {
+    width: 960px;
+    margin: 0 auto;
+
+    padding-bottom: 88px;
+}
+
+.card_container {
+    width: 1000%;
+    /*
+    1.
+    이 컨테이너 너비 =
+    n li * (li width + 16px)
+    
+    -> 자바스크립트     
+    
+    2. 
+    버튼 누르면 스크롤링 이동 구현 
+    
+    -> 자바스크립트
+*/
+
+}
+
+
+
+.card_container ul {
+    display: flex;
+    flex-direction: row;
+    overflow: visible;
+}
+
+.card_container li {
+    width: 472px;
+    height: 468px;
+    margin-right: 16px;
+    background: #FFFFFF;
+    box-shadow: 2px 4px 12px 0 rgba(0, 0, 0, 0.08);
+}
+
+.card_container .image_container {
+    position: relative;
+}
+
+.card_container .article_title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    padding-left: 24px;
+    padding-bottom: 24px;
+
+
+    font-family: 'Noto Sans KR', serif;
+    font-size: 20px;
+    color: #000000;
+    letter-spacing: -0.3px;
+    text-align: left;
+
+    opacity: 0.6;
+}
+
+
+.card_container .text {
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-top: 18px;
+    margin-bottom: 24px;
+}
+
+.card_container li a:hover {
+    opacity: 0.8
+}
+
+.card_container ul:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+/* hot news - card_container*/
+
+
+.middle_contents_container {
+    padding-top: 104px;
+    padding-bottom: 96px;
+
+}
+
+.category_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.category_title_1 {
+    opacity: 0.87;
+    font-family: 'Song Myung', serif;
+    font-size: 18px;
+    color: #000000;
+    letter-spacing: -0.3px;
+}
+
+.category_title_2 {
+
+    opacity: 0.6;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: #000000;
+    padding-top: 6px;
+}
+
+.category ul {
+    display: flex;
+    padding-top: 48px;
+}
+
+.category ul li {
+    opacity: 0.6;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: #000000;
+    letter-spacing: 0;
+
+    padding: 0 28px;
+}
+
+.category_article {
+    padding-top: 48px;
+    width: 723px;
+    margin: 0 auto;
+}
+
+.category_article li {
+    height: 194px;
+    background: #FFFFFF;
+    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.08);
+
+    margin-bottom: 16px;
+}
+
+.category_article_content {
+    height: 130px;
+    display: flex;
+    padding: 32px;
+}
+
+.category_article_textcontainer {
+    padding-left: 24px;
+}
+
+.catebory_article_title {
+    font-family: 'Noto Sans KR', serif;
+    font-size: 20px;
+    color: #000000;
+    letter-spacing: -0.3px;
+    text-align: left;
+
+    opacity: 0.6;
+}
+
+.category_article_textcontainer .text {
+    padding-top: 15px;
+}
+
+.category_article_othercontainer {
+    text-align: right;
+}
+
+.category_article_othercontainer #category_category {
+    padding-top: 4px;
+    opacity: 0.6;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: #000000;
+}
+
+.category_article_othercontainer #writer {
+    padding-top: 88px;
+}
+
+/* 사용자별 카테고리별 뉴스 */
+
+
+
+
+
+footer {
+    width: 100%;
+    /* 아래는 테스트용 */
+    height: 280px;
+    background-color: black;
+}
+
+
+/* home.html */
+
+
+/* 푸터 */
+.copyright p {
+    margin: 0;
+    color: #666666;
+    font-size: 14px
+}
+
+
+/* base.html */
+
+/* ########### 599px 이하 ########### */
+
+@media (max-width: 599px) {
+    .box3 {
+        padding-top: 10px
+    }
+
+    관련 기사 메뉴 .top3news {
+        padding: 10px
+    }
+
+    .top3news li {
+        width: 33%
+    }
+
+    .top3news li a {
+        padding: 2px;
+    }
+
+    .top3news .text {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .top3news #writer {
+        font-size: 11px;
+    }
+
+    .usernews img {
+        float: left;
+        width: 80px
+    }
+
+    .usernews li a {
+        width: auto;
+        margin: 10px;
+        padding: 5px;
+    }
+
+    .usernews h3 {
+        font-size: 15px;
+        margin-bottom: 3px;
+    }
+
+    .usernews .text {
+        margin-left: 80px;
+        padding-left: 4px;
+    }
+
+    .usernews p {
+        font-size: 13px;
+    }
+
+    .usernews span {
+        font-size: 11px;
+    }
+}
+
+/* ########### 1040px 이상 ########### */
+
+@media (min-width: 1040px) {}

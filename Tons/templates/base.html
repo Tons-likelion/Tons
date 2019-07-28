@@ -13,6 +13,7 @@
     {% endblock title %}
 
     <link rel="stylesheet" type="text/css" href="{%static 'base.css'%}">
+    
     {% block css %}
     {% endblock css %}
 
@@ -21,18 +22,29 @@
 <body>
 
     <header>
-        <!--마이페이지, 설정 버튼 및 배너(또는 로고)-->
+        <div class="header_container">
+            <div class="header_container_nav">
+                <div class="logo_tons"></div>
+
+                <nav>
+                    <ul>
+                        <li class="logo_pen"></li>
+                        <li>시작하기
+                        </li>
+                        <li>마이페이지</li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
     </header>
 
     <div class="body">
         {% block contents %}
-        
+
         {% endblock contents %}
     </div>
 
-    <footer>
-        <!-- 푸터 -->
-    </footer>
 
 </body>
 
