@@ -14,10 +14,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 import base_app.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', base_app.views.home, name='home')
+    path('', base_app.views.home, name='home'),
+    path('cat_detail', base_app.views.category_detail, name='cat_detail'), #추후 url 수정 필요
+    # path('base_app/', include('base_app.urls')),
+    path('detail/<int:article_id>/', base_app.views.logout, name="detail"),
+    path('signup/', base_app.views.signup, name="signup"),
+    path('login/', base_app.views.login, name="login"),
+    path('logout/', base_app.views.logout, name="logout"),
+    path('mypage/', base_app.views.mypage, name="mypage"),
+    path('summary_create/<int:article_id>/', base_app.views.summary_create, name="summary_create"),
+    path('summary_delete/<int:article_id>/<int:sum_id>/', base_app.views.summary_delete, name="summary_delete"),
+    path('summary_edit/<int:article_id>/<int:sum_id>/', base_app.views.summary_edit, name="summary_edit"),
 ]

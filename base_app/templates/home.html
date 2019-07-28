@@ -1,46 +1,16 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>main</title>
-</head>
-<body>
-    
-<!--중복되는 부분 - 헤더-->
-{% block header %}
-<header>
-<!--마이페이지, 설정 버튼 및 배너(또는 로고)-->
-</header>
-{% endblock header %}
+{% extends 'base.html' %}
 
-<div class="containers">
-    <div class="top3">
-        {% for top_article in top_list %}
-            {{ top_article.title }}
-            {{ top_article.stars }}
-        {% endfor %}
-    </div>
+{% load staticfiles %}
 
-    <!-- TODO: 카테고리 추가 할수있게끔-->
-    {% for category in category_list%}
-    <div class="category_box">
-<!--        TODO: BACK: 로그인한 사용자 이름 가져오기-->
-        user 님의 관심 카테고리 : {{category}}
-<!--        TODO: BACK: 카테고리에서 기사 하나만 가져오게끔-->
-        {{ article.title }} <!-- 기사 제목 -->
-        {{ article.stars }} <!-- 기사 별점 -->
-        <div class="sum">
-            {{ article.summary }} <!-- 해당 기사에 달리는 요약문 -->
-            {{ article.user_name }}  <!-- 요약문 작성자명 -->
-            {{ article.likes }} <!-- 요약문 객관성-주관성 지표 -->
-        </div>
-    </div>
-    {% endfor %}
-</div>
+{% block title %}
+<title>Tons: home</title>
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{%static 'home.css'%}">
+{% endblock css %}
 
 
-</body>
-</html>
+{% block contents %}
+<a href="{% url 'cat_detail' %}">asdsafa</a>
+{% endblock contents %}
