@@ -21,10 +21,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', base_app.views.home, name='home'),
     # path('base_app/', include('base_app.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('article/', include('article.urls')),
     path('mypage/', base_app.views.mypage, name="mypage"),
     path('summary_create/<int:article_id>/', base_app.views.summary_create, name="summary_create"),
     path('summary_delete/<int:article_id>/<int:sum_id>/', base_app.views.summary_delete, name="summary_delete"),
     path('summary_edit/<int:article_id>/<int:sum_id>/', base_app.views.summary_edit, name="summary_edit"),
-
-    path('accounts/', include('accounts.urls')),
 ]
