@@ -22,6 +22,9 @@ urlpatterns = [
     path('', base_app.views.home, name='home'),
     # path('base_app/', include('base_app.urls')),
     path('article/', include('article.urls')),
+    path('cat_detail', base_app.views.category_detail, name='cat_detail'), #추후 url 수정 필요
+    # path('base_app/', include('base_app.urls')),
+    path('detail/<int:article_id>/', base_app.views.logout, name="detail"),
     path('signup/', base_app.views.signup, name="signup"),
     path('login/', base_app.views.login, name="login"),
     path('logout/', base_app.views.logout, name="logout"),

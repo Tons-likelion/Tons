@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from accounts.models import Profile
+from django.shortcuts import render, get_object_or_404
+from .models import *
+
 # Create your views here.
 
 
@@ -10,7 +11,6 @@ def home(request):
 def detail(request, article_id):
     article = get_object_or_404(Article, pk = article_id)
     return render(request, 'base_app/detail.html', {'article':article})
-
 
 
 
@@ -33,3 +33,9 @@ def summary_delete(request, article_id, sum_id):
     pass
 
 
+# 카테고리 디테일 페이지 - 수정 필요
+# def category_detail(request, cat_id):
+#     cat_detail = get_object_or_404(Category, pk=cat_id)
+#     return render(request, 'base_app/category_detail.html', {'cat_detail':cat_detail})
+def category_detail(request):
+    return render(request, 'category_detail.html')

@@ -10,9 +10,23 @@ class Author(models.Model):
     phone_number = models.TextField(verbose_name="폰번호")
 
 
+# 전체 카테고리
+class Category(models.Model):
+    name = models.CharField(max_length=40, default="Select")
+    slug = models.SlugField(default="select")
+
+    class Meta:
+        verbose_name_plural = 'categories'
+    
+    def __str__(self):
+        return self.name
+
+
 # 전부 크롤링해서 불러올 내용. 작성 불가.
 class Article(models.Model):
+    # user = models.ForeignKey(settings.AUTH_USER_MODEL, default = 1) # 유저가 포스트한다고 하면 쓸 코드. 크롤링 한다면 지워야 할 것.
     title = models.TextField()
+    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.CASCADE)
     pub_date = models.DateTimeField()
     body = models.TextField()
     stars = models.IntegerField(default=0) #별점
@@ -37,8 +51,7 @@ class Summary(models.Model):
         
     class Meta:
         ordering = ['-id'] #최신순
+        verbose_name_plural = 'Summaries'
 
 
-#유저가 선택한 카테고리? 전체 카테고리?
-class Category(models.Model):
-    pass
+
