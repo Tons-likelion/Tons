@@ -12,4 +12,13 @@
 
 
 {% block contents %}
+
+{% if user.is_authenticated %}
+<h2>{{ user.username }}님이 로그인 중</h2> <br>
+<a href="{% url 'logout' %}">Log out</a>
+{% else %}
+<a href="{% url 'signup' %}">Sign up</a> <br>
+<a href="{% url 'login' %}">Log in</a>
+{% endif %}
+
 {% endblock contents %}
