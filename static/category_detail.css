@@ -1,0 +1,297 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+
+/*기본 값*/
+
+.text .line_1,
+.line_2,
+.line_3 {
+    font-family: 'Song Myung', serif;
+    font-size: 1rem;
+    color: #000000;
+    text-align: left;
+    opacity: 0.87;
+}
+
+.text .line_2,
+.line_3 {
+    padding-top: 15px;
+}
+
+#writer {
+    padding-left: 24px;
+}
+
+#writer .by {
+    opacity: 0.6;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0;
+}
+
+#writer .name {
+    opacity: 0.6;
+    font-family: 'Noto Sans KR', serif;
+    font-size: 14px;
+    color: #000000;
+    letter-spacing: 0;
+}
+
+
+/*세줄 요약*/
+
+
+header {
+    width: 100%;
+}
+
+.header_container {
+    width: 1400px;
+    height: 80px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    /*    세로 가운데정렬*/
+}
+
+.header_container_nav {
+    width: 100%;
+    margin: 0 118px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo_tons {
+    width: 30px;
+    height: 30px;
+    background-color: #6f6f6f;
+}
+
+
+nav ul {
+    margin: 0;
+
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+}
+
+nav ul li {
+    text-align: right;
+    opacity: 0.6;
+    font-family: 'Noto Sans KR', serif;
+    font-size: 1rem;
+}
+
+nav ul li:nth-child(1) {
+    margin-left: 8px;
+}
+
+nav ul li:nth-child(2) {
+    padding-left: 64px;
+}
+
+.logo_pen {
+    width: 20px;
+    height: 20px;
+    background-color: #6f6f6f;
+}
+
+/* header */
+
+.wrapper {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.middle_contents_container {
+    padding-top: 64px;
+    padding-bottom: 72px;
+
+}
+
+.category_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.category_title_1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    color: #000000;
+    letter-spacing: -0.9px;
+    text-align: center;
+
+    padding-top: 64px;
+}
+
+.category_title_2 {
+    font-family: 'Song Myung', serif;
+    font-size: 18px;
+    color: #000000;
+    letter-spacing: -0.3px;
+    text-align: center;
+
+    padding-top: 48px;
+
+}
+
+.category_title_3 {
+    opacity: 0.6;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: #000000;
+    padding-top: 6px;
+}
+
+.category ul {
+    display: flex;
+    padding-top: 48px;
+}
+
+.category ul li {
+    opacity: 0.6;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: #000000;
+    letter-spacing: 0;
+
+    padding: 0 28px;
+}
+
+.category_article {
+    width: 723px;
+    margin: 0 auto;
+}
+
+.category_article li {
+    height: 194px;
+    background: #FFFFFF;
+    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.08);
+
+    margin-bottom: 16px;
+}
+
+.category_article_content {
+    height: 130px;
+    display: flex;
+    padding: 32px;
+}
+
+.category_article_textcontainer {
+    padding-left: 24px;
+}
+
+.catebory_article_title {
+    font-family: 'Noto Sans KR', serif;
+    font-size: 20px;
+    color: #000000;
+    letter-spacing: -0.3px;
+    text-align: left;
+
+    opacity: 0.6;
+}
+
+.category_article_textcontainer .text {
+    padding-top: 15px;
+}
+
+.category_article_othercontainer {
+    text-align: right;
+}
+
+.category_article_othercontainer #category_category {
+    padding-top: 4px;
+    opacity: 0.6;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: #000000;
+}
+
+.category_article_othercontainer #writer {
+    padding-top: 88px;
+}
+
+
+/*추가부분입니다 위는 이전파일과동일 ..*/
+
+
+
+.category_title_1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    color: #000000;
+    letter-spacing: -0.9px;
+    text-align: center;
+    opacity: 0.87;
+}
+
+.category_title_2 {
+    font-family: 'Song Myung', serif;
+    font-size: 18px;
+    color: #000000;
+    letter-spacing: -0.3px;
+    text-align: center;
+    opacity: 0.87;
+}
+
+.category_title_3 {
+    opacity: 0.6;
+    font-family: 'DM Serif Display'. serif;
+    font-style: italic;
+    font-size: 13px;
+    color: #000000;
+    text-align: center;
+    opacity: 0.6;
+}
+
+.no_more_container{
+    height: 154px;
+}
+
+.no_more {
+    opacity: 0.38;
+    font-family: 'Song Myung', serif;
+    font-size: 14px;
+    color: #000000;
+    letter-spacing: -0.3px;
+    text-align: center;
+}
+
+
+
+footer {
+    width: 100%;
+    /* 아래는 테스트용 */
+    height: 280px;
+    background-color: black;
+    opacity: 0.87;
+}

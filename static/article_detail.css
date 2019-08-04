@@ -1,0 +1,183 @@
+/* 처음 */
+
+.article_wrapper {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.article_title {
+    height: 50px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 34px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.76px;
+    color: #000000;
+}
+
+.article_wrapper img {
+    width: 723px;
+    height: 410px;
+}
+
+.article_text {
+    opacity: 0.87;
+    font-family: NotoSansKR;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.19;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.article_info_container {
+    opacity: 0.6;
+    font-family: DMSerifDisplay;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #000000;
+}
+.Rectangle {
+    width: 112px;
+    height: 40px;
+    border-radius: 20px;
+    border: solid 1px #979797;
+}
+
+/* 가운데 */
+
+.wrapper2 {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.middle_contents_container {
+    border: solid 1px rgba(151, 151, 151, 0.25);
+    background-color: rgba(216, 216, 216, 0.1);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.category_article li {
+    box-shadow: none;
+}
+
+.lines:after {
+    /*세줄남기기*/
+    content: "";
+    display: block;
+    clear: both
+}
+
+.lines div {
+    float: right;
+    width: auto
+}
+
+.category_text {
+    opacity: 0.6;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: -0.36px;
+    text-align: center;
+    color: #000000;
+}
+
+.summary_info p {
+    /*by 닉네임*/
+    height: 17px;
+    opacity: 0.6;
+    font-family: AppleSDGothicNeo;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.summary_info span {
+    /*날짜*/
+    height: 17px;
+    opacity: 0.38;
+    font-family: NotoSansKR;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.category_article_content:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.category_article_textcontainer {
+    float: left;
+    width: 70%;
+}
+
+.category_article_othercontainer {
+    /*좋&싫*/
+    float: left;
+    width: 30%;
+    text-align: center;
+}
+
+.littlebox:after {
+    /*좋&싫*/
+    content: "";
+    display: block;
+    clear: both;
+}
+.goodbad{
+    margin: 0;
+    float:left;
+    width: 50%
+}
+.square{
+    margin: 0;
+    float:left;
+    width: 50%
+}
+
+
+/* 끝 */
+
+.headline {
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+.headline_2 {
+    opacity: 0.8;
+    font-family: 'Song Myung', serif;
+    font-size: 36px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: -0.6px;
+}
+
+.card_container li {
+    box-shadow: none;
+}

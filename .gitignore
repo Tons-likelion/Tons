@@ -4,7 +4,11 @@
 # Edit at https://www.gitignore.io/?templates=venv,python,django,windows
 
 =======
+<<<<<<< HEAD
 >>>>>>> de2cc4e39bdbedf4118b61c08cc1d493fc218672
+=======
+>>>>>>> a8781688c127f91207e217fcd939ba677daf1dc1
+>>>>>>> front-added
 ### Django ###
 *.log
 *.pot
@@ -237,4 +241,8 @@ $RECYCLE.BIN/
 =======
 # virtual environment
 venv
+<<<<<<< HEAD
 >>>>>>> de2cc4e39bdbedf4118b61c08cc1d493fc218672
+=======
+>>>>>>> a8781688c127f91207e217fcd939ba677daf1dc1
+>>>>>>> front-added

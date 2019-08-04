@@ -21,8 +21,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', base_app.views.home, name='home'),
     # path('base_app/', include('base_app.urls')),
-    path('accounts/', include('accounts.urls')),
+    path('accounts/', include('accounts.urls')), # login logout url 수정 필요
     path('article/', include('article.urls')),
+    path('cat_detail', base_app.views.category_detail, name='cat_detail'), #추후 url 수정 필요
+    # path('base_app/', include('base_app.urls')),
+    path('detail/<int:article_id>/', base_app.views.logout, name="detail"),
     path('mypage/', base_app.views.mypage, name="mypage"),
     path('summary_create/<int:article_id>/', base_app.views.summary_create, name="summary_create"),
     path('summary_delete/<int:article_id>/<int:sum_id>/', base_app.views.summary_delete, name="summary_delete"),

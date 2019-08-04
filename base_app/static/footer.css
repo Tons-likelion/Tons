@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+
+
+footer {
+    width: 100%;
+    background-color: #1A1A1A;
+}
+
+.footer {
+    width: 960px;
+    height: 428px;
+    margin: 0 auto;
+}
+
+.foot_container_1 {
+    display: flex;
+}
+
+.foot_info_1{
+    padding-right: 154px;
+}
+
+.foot_info_2{
+    padding-right: 157px;
+}
+
+#bold {
+    font-family: 'NotoSansKR';
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: -0.23px;
+    color: #ffffff;
+    padding-top: 88px;
+    padding-bottom: 8px;
+    opacity: 0.87;
+}
+
+#law{
+       font-family: 'NotoSansKR';
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: -0.23px;
+    color: #ffffff;
+    padding-top: 13px;
+    padding-bottom: 8px;
+    opacity: 0.87;
+}
+
+.normal {
+    font-family: NotoSansKR;
+    font-size: 14px;
+    letter-spacing: -0.23px;
+    color: #ffffff;
+    opacity: 0.6;
+
+    padding-top: 12px;
+}
+
+.foot_container_2{
+    padding-top: 32px;
+    color: #ffffff;
+}
+
+.law_container{
+    display: flex; 
+    justify-content: space-between;
+}
+
+.law_button ul{
+    display: flex;
+}
+
+.law_button ul li{
+     width: 33px;
+  height: 33px;
+  background-color: #d8d8d8;
+    
+margin-left: 16px;
+}
