@@ -6,6 +6,8 @@ from django.dispatch import receiver
 # Create your models here.
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    obj_summary = models.ManyToManyField('article.Summary', blank=True, related_name="obj_users")
+    sbj_summary = models.ManyToManyField('article.Summary', blank=True, related_name="sbj_users")
 
     def __str__(self):
         return self.user.username

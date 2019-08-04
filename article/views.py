@@ -20,42 +20,47 @@ def summary(request, article_id):
     if request.method == "POST":
         summary = Summary()
         summary.belongsto_article = Article.objects.get(id=article_id)
+        summary.belongsto_user = request.user.profile
         summary.content = request.POST['content']
         summary.save()
         return redirect('article:detail', article_id)
     else:
         return render(request, 'article/summary.html')
 
-def summary_obj_toggle(request, summary_id):
+def summary_obj(request, article_id, summary_id):
     
     summary = Summary.objects.get(id=summary_id)
-    author = request.user.author
+    user = request.user.profile
 
-    check_obj_summary = author.obj_summary.filter(id=summary_id)
-    if check_obj_summary.exists():
-        author.obj_summary.remove(summary)
-        summary.obj_count -= 1
+    check_sbj_summary = user.sbj_summary.filter(id=summary_id)
+    if check_sbj_summary.exists():
+        user.sbj_summary.remove(summary)
+        user.obj_summary.add(summary)
+        summary.sbj_count -= 1
+        summary.obj_count += 1
         summary.save()
     else:
-        author.obj_summary.add(summary)
+        user.obj_summary.add(summary)
         summary.obj_count += 1
         summary.save()
 
-    return redirect('home')
+    return redirect('article:detail', article_id)
 
-def summary_sbj_toggle(request, summary_id):
+def summary_sbj(request, article_id, summary_id):
     
-    summary = Summary.sbjects.get(id=summary_id)
-    author = request.user.author
+    summary = Summary.objects.get(id=summary_id)
+    user = request.user.profile
 
-    check_sbj_summary = author.sbj_summary.filter(id=summary_id)
-    if check_sbj_summary.exists():
-        author.sbj_summary.remove(summary)
-        summary.sbj_count -= 1
+    check_obj_summary = user.obj_summary.filter(id=summary_id)
+    if check_obj_summary.exists():
+        user.obj_summary.remove(summary)
+        user.sbj_summary.add(summary)
+        summary.obj_count -= 1
+        summary.sbj_count += 1
         summary.save()
     else:
-        author.sbj_summary.add(summary)
+        user.sbj_summary.add(summary)
         summary.sbj_count += 1
         summary.save()
 
-    return redirect('home')
+    return redirect('article:detail', article_id)

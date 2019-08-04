@@ -1,16 +1,33 @@
-{% for article in article_list %}    
-    <div>{{article.title}}</div>
-    <div>{{article.content}}</div>
-    <div>{{article.pub_date}}</div>
-    <div>{{article.stars}}</div>
-    <div>
-        <a href="{% url 'article:summary' article.id %}">summary</a>
-    </div>
-    <hr>
-    {% for summary in summary_list %}
-    <div>{{summary.content}}</div>
-    <div>Obj: {{summary.obj_count}}</div>
-    <div>Sbj: {{summary.sbj_count}}</div>
-    <hr>
-    {% endfor %}
+{% for article in article_list %}
+<div>{{article.title}}</div>
+<div>{{article.content}}</div>
+<div>{{article.pub_date}}</div>
+<div>{{article.stars}}</div>
+<div>
+    <a href="{% url 'article:summary' article.id %}">summary</a>
+</div>
+<hr>
+{% for summary in summary_list %}
+<div>{{summary.content}}</div>
+<div>Obj: {{summary.obj_count}}</div>
+<div>Sbj: {{summary.sbj_count}}</div>
+
+{% if summary not in user.profile.obj_summary.all and summary not in user.profile.sbj_summary.all %}
+<div>
+    <a href="{% url 'article:summary_obj' article.id summary.id%}">Obj</a>
+</div>
+<div>
+    <a href="{% url 'article:summary_sbj' article.id summary.id%}">Sbj</a>
+</div>
+{% elif summary in user.author.sbj_summary.all %}
+<div>
+    <a href="{% url 'article:summary_obj' article.id summary.id%}">Obj</a>
+</div>
+{% else %}
+<div>
+    <a href="{% url 'article:summary_sbj' article.id summary.id%}">Sbj</a>
+</div>
+{% endif %}
+<hr>
+{% endfor %}
 {% endfor %}
