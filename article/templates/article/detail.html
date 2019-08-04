@@ -19,7 +19,7 @@
 <div>
     <a href="{% url 'article:summary_sbj' article.id summary.id%}">Sbj</a>
 </div>
-{% elif summary in user.author.sbj_summary.all %}
+{% elif summary in user.profile.sbj_summary.all %}
 <div>
     <a href="{% url 'article:summary_obj' article.id summary.id%}">Obj</a>
 </div>
