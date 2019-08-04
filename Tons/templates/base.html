@@ -12,7 +12,8 @@
     {% block title %}
     {% endblock title %}
 
-    <link rel="stylesheet" type="text/css" href="{%static 'base.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'footer.css' %}">
     
     {% block css %}
     {% endblock css %}
@@ -44,7 +45,49 @@
 
         {% endblock contents %}
     </div>
+        <div class="footer">
+            <div class="foot_container_1">
 
+                        <div class="foot_info_1">
+                            <div id="bold">안내</div>
+                            <div class="normal">공지사항</div>
+                            <div class="normal">자주 묻는 질문</div>
+                            <div class="normal">계정 일시 잠금</div>
+                            <div class="normal">공고</div>
+                        </div>
+
+                        <div class="foot_info_2">
+                            <div id="bold">기타문의</div>
+                            <div class="normal">비즈니스 제휴</div>
+                            <div class="normal">마케팅 PR</div>
+                        </div>
+
+                        <div class="foot_info_3">
+                            <div id="bold">고객센터</div>
+                            <div class="normal">전화:<span>1234-5678</span></div>
+                            <div class="normal">이메일 :<span>abcd1234@likelion.org</span></div>
+                            <div class="normal">카카오톡 :<span>@Tons</span> </div>
+                        </div>
+
+            </div>
+            <div class="foot_container_2">
+                <div class="normal">(주)톤즈&nbsp;&nbsp;&nbsp;&nbsp;사업자등록번호 : 123-45-6789</div>
+                <div class="normal">서울특별시 동대문구 전농동 서울시립대로 163</div>
+
+                <div class="law_container">
+                    <div class="law">
+
+                        <div id="law">서비스 이용약관&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이용자의 권리 및 유의사항&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;개인정보 처리방침&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;위치기반서비스 이용약관</div>
+                    </div>
+                    <div class="law_button">
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                        </ul>
+                    </div>
+                </div>
 
 </body>
 
