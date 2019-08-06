@@ -18,7 +18,7 @@ class Article(models.Model):
         return self.content[:100]
 
     class Meta:
-        ordering = ['-id'] #최신순
+        ordering = ['-id'] #최신순 #TODO: 별점순 바꾸기
 
 class Summary(models.Model):
     belongsto_article = models.ForeignKey(Article, on_delete=models.CASCADE)

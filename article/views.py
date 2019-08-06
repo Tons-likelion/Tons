@@ -2,18 +2,19 @@ from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 from .models import Article, Summary
+from accounts.models import Profile
 
 # Create your views here.
 
 def detail(request, article_id):
-    article_list = Article.objects.all()
+    article = get_object_or_404(Article, pk = article_id)
     summary_list = Summary.objects.filter(belongsto_article=article_id)
     context = {
-        'article_list':article_list,
+        'article':article,
         'summary_list':summary_list,
     }
 
-    return render(request,"article/detail.html", context)
+    return render(request,"article/article_detail.html", context)
 
 def summary(request, article_id):
 
@@ -26,36 +27,40 @@ def summary(request, article_id):
     else:
         return render(request, 'article/summary.html')
 
+
 def summary_obj_toggle(request, summary_id):
     
     summary = Summary.objects.get(id=summary_id)
-    author = request.user.author
+    user = request.user
+    profile = Profile.objects.get(user=user)
 
-    check_obj_summary = author.obj_summary.filter(id=summary_id)
+    check_obj_summary = profile.obj_summ.filter(id=summary_id)
+
     if check_obj_summary.exists():
-        author.obj_summary.remove(summary)
+        profile.obj_summ.remove(summary)
         summary.obj_count -= 1
         summary.save()
     else:
-        author.obj_summary.add(summary)
+        profile.obj_summ.add(summary)
         summary.obj_count += 1
         summary.save()
 
-    return redirect('home')
+    return redirect('article:detail', summary.belongsto_article.id)
 
 def summary_sbj_toggle(request, summary_id):
     
-    summary = Summary.sbjects.get(id=summary_id)
-    author = request.user.author
+    summary = Summary.objects.get(id=summary_id)
+    user = request.user
+    profile = Profile.objects.get(user=user)
 
-    check_sbj_summary = author.sbj_summary.filter(id=summary_id)
+    check_sbj_summary = profile.sbj_summ.filter(id=summary_id)
     if check_sbj_summary.exists():
-        author.sbj_summary.remove(summary)
+        profile.sbj_summ.remove(summary)
         summary.sbj_count -= 1
         summary.save()
     else:
-        author.sbj_summary.add(summary)
+        profile.sbj_summ.add(summary)
         summary.sbj_count += 1
         summary.save()
 
-    return redirect('home')
+    return redirect('article:detail', summary.belongsto_article.id)

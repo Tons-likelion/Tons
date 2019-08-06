@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+    {% block title %}
+    <title>Tons</title>
+    {% endblock title %}
+
+    {% block css %}
+    <link rel="stylesheet" href="{%static 'css/mypage.css'%}">
+    {% endblock css %}
+
+    {% block contents %}
+    <div class="wrapper">
+            <div class="mypage_container">
+                <div class="mypage_title_1">
+                   더 많은 주제를 구독하세요.</div>
+
+                <div class="mypage_title_2">당신이 선택한 톤즈의</div>
+
+                <div class="mypage_title_3">주제.</div>
+            </div>
+            
+            <div class="box_container">
+                <ul>
+                    <li>오피니언</li>
+                    <li>정치</li>
+                    <li>경제</li>
+                    <li>국제</li>
+                    <li>문화</li>
+                    <li>스포츠</li>
+                </ul>
+                
+            </div>
+    </div>
+    <!--당신의 주제를 선태하세요 -->
+    
+    
+    <div class="wrapper">
+            <div class="offer_container">
+                <div class="offer_title_1">
+                   이런 주제는 어떠세요.</div>
+
+                <div class="offer_title_2">톤즈가 당신에게 제안합니다.</div>
+
+                <div class="offer_title_3">we offer you more knowledge.</div>
+            </div>
+            
+            <div class="offer_box_container">
+                <ul>
+                    <li>IT/과학</li>
+                    <li>문화</li>
+                    <li>포토</li>
+                    <li>세계</li>
+                    <li>연예</li>
+                    <li>TV</li>
+                </ul>
+            </div>
+    </div>
+   
+   {% endblock contents %}

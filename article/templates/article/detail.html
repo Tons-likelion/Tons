@@ -1,16 +1,41 @@
-{% for article in article_list %}    
+{% comment %} {% for article in article_list %} {% endcomment %}
+    <br><br>
+    <hr>
+    <br><br>
     <div>{{article.title}}</div>
     <div>{{article.content}}</div>
     <div>{{article.pub_date}}</div>
     <div>{{article.stars}}</div>
+    <br><br>
+    <hr>
+    <br><br>
     <div>
-        <a href="{% url 'article:summary' article.id %}">summary</a>
+        <a href="{% url 'article:summary' article.id %}">write a summary</a>
     </div>
     <hr>
+
     {% for summary in summary_list %}
     <div>{{summary.content}}</div>
-    <div>Obj: {{summary.obj_count}}</div>
-    <div>Sbj: {{summary.sbj_count}}</div>
+
+    <div>Obj: {{summary.obj_count}} <br>
+    <a href="{% url 'article:summary_obj_toggle' summary.id %}">
+    {% if article in user.profile.obj_summ.all %}
+        취소
+    {% else %}
+        좋아요
+    {% endif %}
+    </a>
+    </div>
+
+    <div>Sbj: {{summary.sbj_count}} <br>
+    <a href="{% url 'article:summary_sbj_toggle' summary.id %}">
+    {% if article in user.profile.sbj_summ.all %}
+        취소
+    {% else %}
+        싫어요
+    {% endif %}
+    </a>
+    </div>
     <hr>
     {% endfor %}
-{% endfor %}
+{% comment %} {% endfor %} {% endcomment %}

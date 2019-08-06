@@ -1,0 +1,218 @@
+/* 처음 */
+
+.article_wrapper {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.article_title {
+    height: 50px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 34px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.76px;
+    color: #000000;
+    margin-top: 64px;
+    margin-bottom: 110px;
+}
+.article_body{
+    width: 958px;
+    height: 608px;
+}
+
+.article_text {
+    opacity: 0.87;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.19;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.article_info_container {
+    opacity: 0.6;
+    font-family: 'DM Serif Display', serif;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+/* 가운데 */
+.middle_contents_container {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.category_title_1{
+    font-family: Song Myung;
+    font-size: 36px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.lines{
+    margin: 40px;
+}
+
+.lines:after {
+    /*세줄남기기*/
+    content: "";
+    display: block;
+    clear: both
+}
+
+.lines div {
+    float: right;
+    width: auto
+}
+.square{margin-left: 8px;}
+
+.category_text {
+    opacity: 0.6;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: -0.36px;
+    text-align: center;
+    color: #000000;
+}
+
+.summary_info p {
+    /*by 닉네임*/
+    height: 17px;
+    opacity: 0.6;
+    font-family: AppleSDGothicNeo;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.summary_info span {
+    /*날짜*/
+    height: 17px;
+    opacity: 0.38;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.category_article_content:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.category_article_textcontainer {
+    float: left;
+    width: 70%;
+}
+
+.category_article_othercontainer {
+    /*좋&싫*/
+    float: left;
+    width: 30%;
+    text-align: center;
+}
+
+.littlebox{
+    margin: 18px;
+    
+}
+
+.littlebox:after {
+    /*좋&싫*/
+    content: "";
+    display: block;
+    clear: both;
+}
+.goodbad{
+    margin: 0;
+    float:left;
+    width: 50%;
+    opacity: 0.6;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.31px;
+    color: #000000;
+    margin-left: 8px;
+    padding: 0px;
+}
+.vs {
+    width: 18px;
+    height: 18px;
+    opacity: 0.25;
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    color: #000000;
+    text-align: center;
+  }
+.square{
+    margin: 0;
+    float:left;
+    width: 50%
+}
+.num {
+    margin-left: 8px;
+}
+
+/* 끝 */
+
+.headline {
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+.headline_2 {
+    opacity: 0.8;
+    font-family: 'Song Myung', serif;
+    font-size: 36px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: -0.6px;
+}
+
+.card_container li {
+    box-shadow: none;
+}
