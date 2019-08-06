@@ -11,8 +11,11 @@ models.py, views.py, urls.py 및 templates 업데이트
 
 front 개략적인 추가, url 및 href 링크 수정 필요. (+ css 적용도 맞게 짝지어졌는지 재확인 해야됨)
 
-### 2019.07.30 13:46
-accounts & article 합치기
-front 추가: Tons\static 에 css 및 img
-            Tons\Tons\templates 에 html 파일
-base_app 삭제
+### 2019.08.04 18:15
+
+현재까지 한 내용 merge (account, front, article 등)
+
+
+### 2019.08.06 14:40
+
+프론트 수정, 기초적인 좋아요 기능 구현

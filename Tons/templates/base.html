@@ -32,9 +32,8 @@
                 <nav>
                     <ul>
                         <li class="logo_pen"></li>
-                        <li>시작하기
-                        </li>
-                        <li>마이페이지</li>
+                        <li><a href="{% url 'accounts:signup' %}">시작하기</a></li>
+                        <li><a href="#">마이페이지</a></li>
                     </ul>
                 </nav>
 
@@ -47,6 +46,7 @@
         
         {% endblock contents %}
     </div>
+
 
     <footer>
         <div class="footer">
