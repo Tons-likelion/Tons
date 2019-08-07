@@ -1,13 +1,13 @@
 from django.db import models
 from django.utils import timezone
-
+from category.models import Category
 # Create your models here.
 
 class Article(models.Model):
 
     title = models.CharField(max_length=200)
     pub_date = models.DateTimeField(auto_now_add=True)
-    category = models.TextField()
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, blank = True)
     content = models.TextField()
     stars = models.FloatField(default=0)
     

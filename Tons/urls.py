@@ -16,12 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import Tons.views
+import category.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', Tons.views.home, name='home'),
-    path('mypage/', Tons.views.mypage, name='mypage'),
+
+    path('mypage/<int:user_id>/', category.views.mypage, name='mypage'),
 
     path('article/', include('article.urls')),
     path('accounts/', include('accounts.urls')),

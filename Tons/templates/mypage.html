@@ -22,12 +22,9 @@
             
             <div class="box_container">
                 <ul>
-                    <li>오피니언</li>
-                    <li>정치</li>
-                    <li>경제</li>
-                    <li>국제</li>
-                    <li>문화</li>
-                    <li>스포츠</li>
+                    {% for category in cat_list %}
+                    <li>{{category.name}}</li>
+                    {% endfor %}
                 </ul>
                 
             </div>
