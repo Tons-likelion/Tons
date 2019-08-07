@@ -65,14 +65,14 @@
                                     </div>
                                 </div>
                             </div>
-
+                            {% if user.is_authenticated %}
                             <div class="category_article_othercontainer">
                                 <div class="littlebox">
                                     <div class="square"
                                         style=" width: 20px;   height: 20px;   background-color: #6f6f6f;"></div>
                                     <div class="goodbad">
-                                        <a href="{% url 'article:summary_obj_toggle' summary.id %}">
-                                        {% if article in user.profile.obj_summ.all %}
+                                        <a href="{% url 'article:summary_obj' summary.id %}">
+                                        {% if article in user.profile.obj_sum.all %}
                                             취소
                                         {% else %}
                                             좋아요
@@ -87,8 +87,8 @@
                                     <div class="square"
                                         style=" width: 20px;   height: 20px;   background-color: #6f6f6f;"></div>
                                     <div class="goodbad">
-                                        <a href="{% url 'article:summary_sbj_toggle' summary.id %}">
-                                        {% if article in user.profile.sbj_summ.all %}
+                                        <a href="{% url 'article:summary_sbj' summary.id %}">
+                                        {% if article in user.profile.sbj_sum.all %}
                                             취소
                                         {% else %}
                                             글쎄요
@@ -97,6 +97,7 @@
                                     <span class="num">{{summary.sbj_count}}</span></div>
                                 </div>
                             </div>
+                            {% endif %}
                         </div>
                     </a>
                 </li>

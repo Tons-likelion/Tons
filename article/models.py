@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from accounts.models import Profile
 from category.models import Category
 # Create your models here.
 
@@ -18,10 +19,11 @@ class Article(models.Model):
         return self.content[:100]
 
     class Meta:
-        ordering = ['-id'] #최신순 #TODO: 별점순 바꾸기
+        ordering = ['-stars'] #최신순 #TODO: 별점순 바꾸기
 
 class Summary(models.Model):
     belongsto_article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    belongsto_user = models.ForeignKey(Profile, on_delete=models.CASCADE)
     content = models.TextField()
     pub_date = models.DateTimeField(auto_now_add=True)
     obj_count = models.PositiveIntegerField(default=0) #객관지수
@@ -31,4 +33,4 @@ class Summary(models.Model):
         return self.content
         
     class Meta:
-        ordering = ['-id'] #최신순
+        ordering = ['-obj_count'] #최신순

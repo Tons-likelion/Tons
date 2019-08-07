@@ -33,7 +33,11 @@
                     <ul>
                         <li class="logo_pen"></li>
                         {% if user.is_active %}
-                        <li><a href="#">나가기</a></li>
+                        <li><a href="javascript:{document.getElementById('logout').submit()}">나가기</a>
+                            <form id="logout" method="POST" action="{% url 'accounts:logout' %}">
+                                {% csrf_token %} <input type="hidden" />
+                            </form>
+                        </li>
                         <li><a href="{% url 'mypage' user.id %}">마이페이지</a></li>
                         {% else %}
                         <li><a href="{% url 'accounts:signup' %}">시작하기</a></li>

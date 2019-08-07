@@ -21,45 +21,53 @@ def summary(request, article_id):
     if request.method == "POST":
         summary = Summary()
         summary.belongsto_article = Article.objects.get(id=article_id)
+        user = request.user
+        profile = Profile.objects.get(user=user)
+        summary.belongsto_user = profile
         summary.content = request.POST['content']
         summary.save()
         return redirect('article:detail', article_id)
     else:
         return render(request, 'article/summary.html')
 
-
-def summary_obj_toggle(request, summary_id):
+def summary_obj(request, summary_id):
     
     summary = Summary.objects.get(id=summary_id)
     user = request.user
     profile = Profile.objects.get(user=user)
 
-    check_obj_summary = profile.obj_summ.filter(id=summary_id)
+    check_sbj_sum = profile.sbj_sum.filter(id=summary_id)
 
-    if check_obj_summary.exists():
-        profile.obj_summ.remove(summary)
-        summary.obj_count -= 1
+    if check_sbj_sum.exists():
+        profile.sbj_sum.remove(summary)
+        profile.obj_sum.add(summary)
+        summary.sbj_count -= 1
+        summary.obj_count += 1
         summary.save()
+
     else:
-        profile.obj_summ.add(summary)
+        profile.obj_sum.add(summary)
         summary.obj_count += 1
         summary.save()
 
     return redirect('article:detail', summary.belongsto_article.id)
 
-def summary_sbj_toggle(request, summary_id):
+def summary_sbj(request, summary_id):
     
     summary = Summary.objects.get(id=summary_id)
     user = request.user
     profile = Profile.objects.get(user=user)
 
-    check_sbj_summary = profile.sbj_summ.filter(id=summary_id)
-    if check_sbj_summary.exists():
-        profile.sbj_summ.remove(summary)
-        summary.sbj_count -= 1
+    check_obj_sum = profile.obj_sum.filter(id=summary_id)
+
+    if check_obj_sum.exists():
+        profile.obj_sum.remove(summary)
+        profile.sbj_sum.add(summary)
+        summary.obj_count -= 1
+        summary.sbj_count += 1
         summary.save()
     else:
-        profile.sbj_summ.add(summary)
+        profile.sbj_sum.add(summary)
         summary.sbj_count += 1
         summary.save()
 
