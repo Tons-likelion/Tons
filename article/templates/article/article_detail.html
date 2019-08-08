@@ -37,9 +37,16 @@
                 <div class="category_title_1"> 톤즈의 기자들이 남긴</div>
                 <div class="category_title_1"> 세 줄 요약을 만나보세요.</div>
                 <div class="lines">
-                    <div class="category_text"> <a href="{% url 'article:summary' article.id %}">세 줄 남기기</a><div class="square"
-                            style=" width: 20px;   height: 20px;   background-color: #6f6f6f;"></div>
+                    <div class="category_text"> 
+                    {% if user.is_active %}
+                    <a href="{% url 'article:summary' article.id %}">세 줄 남기기</a>
+                    {% else %}
+                    <a href="{% url 'accounts:login'%}">세 줄 남기기</a>
+                    {% endif %}
+                    <div class="square" style=" width: 20px;   height: 20px;   background-color: #6f6f6f;"></div>
                     </div>
+                    
+
                 </div>
             </div>
 
