@@ -37,3 +37,4 @@ class Summary(models.Model):
         
     class Meta:
         ordering = ['-obj_count']
+        verbose_name_plural = "Summaries"
