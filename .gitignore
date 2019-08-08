@@ -4,7 +4,6 @@
 *.pyc
 __pycache__/
 local_settings.py
-db.sqlite3
 media
 <<<<<<< HEAD
 
@@ -73,7 +72,6 @@ coverage.xml
 *.mo
 
 # Django stuff:
-db.sqlite3-journal
 
 # Flask stuff:
 instance/

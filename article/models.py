@@ -7,9 +7,11 @@ from category.models import Category
 class Article(models.Model):
 
     title = models.CharField(max_length=200)
-    pub_date = models.DateTimeField(auto_now_add=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, blank = True)
+    writer = models.CharField(max_length=50)
+    pub_date = models.DateTimeField(auto_now_add=False)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, null = True)
     content = models.TextField()
+    original = models.TextField()
     stars = models.FloatField(default=0)
     
     def __str__(self):
@@ -19,7 +21,7 @@ class Article(models.Model):
         return self.content[:100]
 
     class Meta:
-        ordering = ['-stars'] #최신순 #TODO: 별점순 바꾸기
+        ordering = ['-stars'] 
 
 class Summary(models.Model):
     belongsto_article = models.ForeignKey(Article, on_delete=models.CASCADE)
@@ -33,4 +35,4 @@ class Summary(models.Model):
         return self.content
         
     class Meta:
-        ordering = ['-obj_count'] #최신순
+        ordering = ['-obj_count']
