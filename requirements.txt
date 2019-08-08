@@ -1,2 +1,4 @@
 Django==2.2.4
+
+#크롤링
 beautifulsoup4==4.8.0
