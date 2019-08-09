@@ -13,6 +13,7 @@ class Article(models.Model):
     content = models.TextField()
     original = models.TextField()
     stars = models.FloatField(default=0)
+    stars_count = models.PositiveIntegerField(default=0)
     photo = models.ImageField(upload_to="static\img", null=True, blank=True)
     
     def __str__(self):
