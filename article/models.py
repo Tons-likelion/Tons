@@ -16,6 +16,7 @@ class Article(models.Model):
     stars = models.FloatField(default=0)
     photo = models.ImageField(upload_to="media\img", null=True, blank=True)
     thumbnail = ThumbnailerImageField(upload_to='article', blank=True)
+    stars_count = models.PositiveIntegerField(default=0)
     
     def __str__(self):
         return self.title

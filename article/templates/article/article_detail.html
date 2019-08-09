@@ -17,7 +17,7 @@
     <div class="article_wrapper">
         <div class="article_title">{{article.title}}</div>
         <div class="article_body">
-            {% if article.photo.exists() %}
+            {% if article.photo %}
                 <div class="article_photo">
                     <img src="{{ article.photo.url }}">
                 </div>
