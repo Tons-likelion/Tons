@@ -102,7 +102,7 @@ nav ul {
 nav ul li {
     text-align: right;
     opacity: 0.6;
-    font-family: NotoSansKR;
+    font-family: 'Noto Sans KR', serif;
     font-size: 1rem;
 }
 
@@ -234,6 +234,7 @@ nav ul li:nth-child(2) {
     width: 596px;
     margin: 0 auto;
     padding-top: 64px;
+    padding-bottom: 64px;
 }
 
 .offer_box_container ul{
