@@ -6,6 +6,9 @@
 <title>Tons: homepage</title>
 {% endblock title %}
 
+    {% block css %}
+ <link rel="stylesheet" type="text/css" href="{%static 'css/home.css'%}">
+    {% endblock %}
 
     {% block contents %}
     
@@ -109,7 +112,7 @@
                             <span class="name">ooo기자</span></div>
                     </a>
                 </li>
- <li class="clue card_width card_check windLoadBefore_2">
+     <li class="clue card_width card_check windLoadBefore_2">
                     <a href="#">
                         <div class="image_container">
                             <div class="img_wrap_1"><img src="{% static 'img/test_image.png' %}" alt=""></div>
