@@ -1,0 +1,229 @@
+﻿﻿{% extends 'base.html' %}
+
+
+{% load staticfiles %}
+
+
+{% block title %}
+<title>Tons: detail</title>
+{% endblock title %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{%static 'css/article_detail.css'%}">
+{% endblock css %}
+
+
+
+{% block contents %}
+    <div class="article_wrapper">
+        <div class="article_title">{{article.title}}</div>
+        <div class="article_body">
+            <div class="article_text">
+                <p>{{article.content}}</p>
+                <p>{{article.pub_date}}</p>
+                <p>{{article.stars}}</p>
+            </div>
+        </div>
+        <div class="lines">
+            <div class="category_text">기사 전문 보기<div class="square"
+                    style=" width: 20px;   height: 20px;   background-color: #6f6f6f;"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="wrapper2">
+        <div class="middle_contents_container">
+            <div class="category_container">
+                <div class="category_title_1"> 톤즈의 기자들이 남긴</div>
+                <div class="category_title_1"> 세 줄 요약을 만나보세요.</div>
+                <div class="lines">
+                    <div class="category_text"> <a href="{% url 'article:summary' article.id %}">세 줄 남기기</a><div class="square"
+                            style=" width: 20px;   height: 20px;   background-color: #6f6f6f;"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <ul class="category_article">
+            {% for summary in summary_list %}
+                <li>
+                    <a href="#">
+                        <div class="category_article_content2">
+                            <div class="category_article_textcontainer2">
+                                <div class="text2">
+                                    <div class="yunjee">
+                                        {{summary.content}}<br>1<br>1121312
+                                    </div>
+                                    <!-- <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
+                                    </div>
+                                    <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
+                                    </div>
+                                    <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
+                                    </div> -->
+                                    <div class="summary_info">
+                                        <p>by 닉네임 <span>Jul 25.2019</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="category_article_othercontainer2">
+                                <div class="littlebox">
+                                    <div class="square"></div>
+                                    <div class="goodbad">
+                                        <a chref="{% url 'article:summary_obj_toggle' summary.id %}">
+                                        {% if article in user.profile.obj_summ.all %}
+                                            취소
+                                        {% else %}
+                                            좋아요
+                                        {% endif %}
+                                        </a>
+                                        </div>
+                                    <div class="num">{{summary.obj_count}}</div> 
+                                </div>
+                                <div class="littlebox2">
+                                    <div class="vs">VS</div>
+                                </div>
+                                <div class="littlebox">
+                                    <div class="square"></div>
+                                    <div class="goodbad">
+                                        <a href="{% url 'article:summary_sbj_toggle' summary.id %}">
+                                        {% if article in user.profile.sbj_summ.all %}
+                                            취소
+                                        {% else%}
+                                            글쎄요
+                                        {% endif %}
+                                        </a>    
+                                           </div>
+                                    <span class="num">{{summary.sbj_count}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <!--    같은 기사 다른 요약-->
+
+
+
+    <div class="card_container_wrapper">
+        <div class="headline">
+            <div class="headline_2">IT 관련 다른 기사는 어떠세요?</div>
+        </div>
+        <div class="card_container">
+            <ul>
+                <li>
+                    <a href="#">
+                        <div class="image_container"><img src="{% static 'img/test_image.png' %}" alt="">
+                            <div class="article_title">
+                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
+                            </div>
+                        </div>
+                        <div class="text">
+                            <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
+                            </div>
+                            <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
+                            </div>
+                            <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
+                            </div>
+                        </div>
+
+                        <div id="writer">
+                            <span class="by">by</span>
+                            <span class="name">ooo기자</span></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="image_container"><img src="{% static 'img/test_image.png' %}" alt="">
+                            <div class="article_title">
+                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
+                            </div>
+                        </div>
+                        <div class="text">
+                            <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
+                            </div>
+                            <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
+                            </div>
+                            <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
+                            </div>
+                        </div>
+
+                        <div id="writer">
+                            <span class="by">by</span>
+                            <span class="name">ooo기자</span></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="image_container"><img src="{% static 'img/test_image.png' %}" alt="">
+                            <div class="article_title">
+                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
+                            </div>
+                        </div>
+                        <div class="text">
+                            <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
+                            </div>
+                            <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
+                            </div>
+                            <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
+                            </div>
+                        </div>
+
+                        <div id="writer">
+                            <span class="by">by</span>
+                            <span class="name">ooo기자</span></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="image_container"><img src="{% static 'img/test_image.png' %}" alt="">
+                            <div class="article_title">
+                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
+                            </div>
+                        </div>
+                        <div class="text">
+                            <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
+                            </div>
+                            <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
+                            </div>
+                            <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
+                            </div>
+                        </div>
+
+                        <div id="writer">
+                            <span class="by">by</span>
+                            <span class="name">ooo기자</span></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="image_container"><img src="{% static 'img/test_image.png' %}" alt="">
+                            <div class="article_title">
+                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
+                            </div>
+                        </div>
+                        <div class="text">
+                            <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
+                            </div>
+                            <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
+                            </div>
+                            <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
+                            </div>
+                        </div>
+
+                        <div id="writer">
+                            <span class="by">by</span>
+                            <span class="name">ooo기자</span></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--같은 주제 다른 기사-->
+
+{% endblock contents %}
