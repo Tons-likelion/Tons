@@ -6,10 +6,10 @@ from django.contrib.auth.models import User
 
 def home(request, user_id = None):
 
-    from django.template.defaulttags import register
-    @register.filter
-    def get_item(dictionary, key):
-        return dictionary.get(key)
+    # from django.template.defaulttags import register
+    # @register.filter
+    # def get_item(dictionary, key):
+    #     return dictionary.get(key)
 
     top10_article = Article.objects.order_by('-stars')[:10]
     top10_best_summ_list = dict()
@@ -63,7 +63,7 @@ def home(request, user_id = None):
                 best_summ_list = None
                 rand_category[category] = '기사가 없습니다.'
 
-        return render(request, 'home.html', {'top10_article' : top10_article,'article_by_category': rand_category, 'best_summ_list':best_summ_list})
+        return render(request, 'home.html', {'top10_article' : top10_article,'article_by_category': rand_category, 'best_summ_list':best_summ_list, 'top10_best_summ_list':top10_best_summ_list})
 
 
 

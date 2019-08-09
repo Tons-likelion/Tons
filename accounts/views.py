@@ -38,7 +38,7 @@ def login(request):
         user = auth.authenticate(request, username=username, password=password) #로그인 정보 확인
         if user is not None:
             auth.login(request, user)
-            return redirect('home')
+            return redirect('home', user.id)
         else:   #TODO 로그인 정보가 없을때
             pass
         return render(request,'accounts/login.html')
