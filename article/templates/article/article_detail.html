@@ -1,235 +1,665 @@
-﻿﻿{% extends 'base.html' %}
-
-
 {% load staticfiles %}
 
 
-{% block title %}
-<title>Tons: detail</title>
-{% endblock title %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>article_detail</title>
+      {% block css %}
+ <link rel="stylesheet" type="text/css" href="{%static 'css/article_detail.css'%}">
+   <link rel="stylesheet" type="text/css" href="{%static 'css/footer.css'%}">
+    {% endblock %}
+  
 
+    <link href="https://fonts.googleapis.com/css?family=Song+Myung&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <title>Tons</title>
 
-{% block css %}
-<link rel="stylesheet" href="{%static 'css/article_detail.css'%}">
-{% endblock css %}
+</head>
 
-{% block contents %}
-    <div class="article_wrapper">
-        <div class="article_title">{{article.title}}</div>
-        <div class="article_body">
-            <div class="article_text">
-                <p>{{article.content}}</p>
-                <p>{{article.pub_date}}</p>
-                <p>{{article.stars}}</p>
+<body>
+    <header>
+        <div class="header_container">
+            <div class="header_container_nav">
+                <div class="logo_tons"></div>
+                <nav>
+                    <ul>
+                        <li class="logo_pen"></li>
+                        <li>시작하기
+                        </li>
+                        <li>마이페이지</li>
+                    </ul>
+                </nav>
+
             </div>
         </div>
-        <div class="lines">
-            <div class="category_text">기사 전문 보기<div class="square"
-                    style=" width: 20px;   height: 20px;   background-color: #6f6f6f;"></div>
+    </header>
+    <!--헤더-->
+
+    <div class="detail_wrapper">
+        <div class="detail_article_img"><img id="img100 " src="{% static 'img/test_image.png' %}" alt="">
+
+        </div>
+        <div class="detail_article_title">
+            <div class="detail_article_title_aligncenter">“한국 알리려 왔어요”… 방한한 美 중고교 역사교사</div>
+        </div>
+        <div class="detail_article_aligncenter">
+            <div class="detail_article_wrapper expand">
+                <div class="detail_article_body" id="article_height">
+                    <p class="jebaljom">
+                             <p>{{article.content}}</p>
+                               <p>{{article.pub_date}}</p>
+                               <p>{{article.stars}}</p>
+                    </p>
+
+                    <div class="gradation"></div>
+                    <div class="whole_title" id="pageExpand" style="opacity:1">
+                        <div class="whole_title_text">기사 전문 보기</div>
+                        <div class="icon_tobottom">icon</div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 
 
-    <div class="wrapper2">
-        <div class="middle_contents_container">
-            <div class="category_container">
-                <div class="category_title_1"> 톤즈의 기자들이 남긴</div>
-                <div class="category_title_1"> 세 줄 요약을 만나보세요.</div>
-                <div class="lines">
-                    <div class="category_text"> 
-                    {% if user.is_active %}
-                    <a href="{% url 'article:summary' article.id %}">세 줄 남기기</a>
-                    {% else %}
-                    <a href="{% url 'accounts:login'%}">세 줄 남기기</a>
-                    {% endif %}
-                    <div class="square" style=" width: 20px;   height: 20px;   background-color: #6f6f6f;"></div>
-                    </div>
-                    
+    <div id="move" id="footerTest">
+        <!--    //move 포인트    -->
 
+        <div class="wrapper2">
+            <div class="middle_contents_container2">
+                <div class="category_container2">
+                    <div class="category_title_1_1"> 톤즈의 기자들이 남긴</div>
+                    <div class="category_title_1_1"> 세 줄 요약을 만나보세요.</div>
+                    <div class="category_text"> <a href="{% url 'article:summary' article.id %}">세 줄 남기기
+                            <div class="square2">1</div>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <ul class="category_comment commentPage">
+                 {% comment %} {% for summary in summary_list %}--> {% endcomment %}
+                    <li class="comment clue">
+                        <a href="#">
+                            <div class="category_article_content2">
+                                <div class="category_article_textcontainer2">
+                                    <div class="text2">
+                                        <div class="yunjee">
+                                            <div>
+                                                <div class="line_1 underline"> {{summary.content}} 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.</div>
+                                            </div>
+                                            <div>
+                                                <div class="line_2 underline">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="line_3 underline">천자만홍이 보이는 아름답고 심장의 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="summary_info">
+                                            <span class="summary_by">by</span> <span class="summary_writer">닉네임</span> <span class="summary_pub_date">Jul 25.2019</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="category_article_othercontainer2">
+                                    <div class="littlebox">
+                                        <div class="square"></div>
+                                        <div class="goodbad">
+                                            {% comment %} <a chref="{% url 'article:summary_obj_toggle' summary.id %}"> {% endcomment %}
+{% comment %}                                                
+                                                {% if article in user.profile.obj_summ.all %}
+                                                취소
+                                                {% else %}
+                                                좋아요
+                                                {% endif %} {% endcomment %}
+
+                                            </a>
+                                        </div>
+                                        <div class="num">
+                                                                            {% comment %} {{summary.obj_count}}                                        </div> {% endcomment %}
+                                    </div>
+                                    <div class="littlebox2">
+                                        <div class="vs">VS</div>
+                                    </div>
+                                    <div class="littlebox">
+                                        <div class="square"></div>
+                                        <div class="goodbad">
+                                            {% comment %} <a href="{% url 'article:summary_sbj_toggle' summary.id %}"> {% endcomment %}
+                                             
+                                                {% comment %} {% if article in user.profile.sbj_summ.all %}
+                                                취소
+                                                {% else%}
+                                                글쎄요
+                                                {% endif %} {% endcomment %}
+
+                                            </a>
+                                        </div>
+                                        <span class="num">
+                                                                     {% comment %} {{summary.sbj_count}} {% endcomment %}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="comment clue">
+                        <a href="#">
+                            <div class="category_article_content2">
+                                <div class="category_article_textcontainer2">
+                                    <div class="text2">
+                                        <div class="yunjee">
+                                            <div>
+                                                <div class="line_1 underline"> {{summary.content}} 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.</div>
+                                            </div>
+                                            <div>
+                                                <div class="line_2 underline">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="line_3 underline">천자만홍이 보이는 아름답고 심장의 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="summary_info">
+                                            <span class="summary_by">by</span> <span class="summary_writer">닉네임</span> <span class="summary_pub_date">Jul 25.2019</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="category_article_othercontainer2">
+                                    <div class="littlebox">
+                                        <div class="square"></div>
+                                        <div class="goodbad">
+                                            {% comment %} <a chref="{% url 'article:summary_obj_toggle' summary.id %}"> {% endcomment %}
+{% comment %}                                                
+                                                {% if article in user.profile.obj_summ.all %}
+                                                취소
+                                                {% else %}
+                                                좋아요
+                                                {% endif %} {% endcomment %}
+
+                                            </a>
+                                        </div>
+                                        <div class="num">
+                                                                            {% comment %} {{summary.obj_count}}                                        </div> {% endcomment %}
+                                    </div>
+                                    <div class="littlebox2">
+                                        <div class="vs">VS</div>
+                                    </div>
+                                    <div class="littlebox">
+                                        <div class="square"></div>
+                                        <div class="goodbad">
+                                            {% comment %} <a href="{% url 'article:summary_sbj_toggle' summary.id %}"> {% endcomment %}
+                                             
+                                                {% comment %} {% if article in user.profile.sbj_summ.all %}
+                                                취소
+                                                {% else%}
+                                                글쎄요
+                                                {% endif %} {% endcomment %}
+
+                                            </a>
+                                        </div>
+                                        <span class="num">
+                                                                     {% comment %} {{summary.sbj_count}} {% endcomment %}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                 
+                    
+                         {% comment %}                {% endfor %}{% endcomment %}
+                    <div class="nomore">더 이상 기사가 없습니다.</div>
+
+                </ul>
+
+                {% comment %} <ul class="number_index"> {% endcomment %}
+                    <!--                    <li class="nindex">1</li>-->
+                {% comment %} </ul> {% endcomment %}
+            </div>
+        </div>
+        <!--    같은 기사 다른 요약-->
+        <div class="wrapper">
+            <div class="upper_contents_container">
+                <div class="title_container">
+                    <div class="title_4 winLoadBefore">
+                        IT&nbsp;관련 다른 기사는 어떠세요?</div>
+                </div>
+
+            </div>
+        </div>
+        <!--타이틀-->
+
+        <div class="card_container_wrapper">
+            <div class="card_container">
+                <ul>
+
+                    <li class="clue card_width card_check windLoadBefore_2">
+                        <a href="#">
+                            <div class="image_container">
+                                <div class="img_wrap_1"><img src="{% static 'img/test_image.png' %}" alt=""></div>
+                                <div class="article_title">
+                                    “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
+                                </div>
+                            </div>
+                            <div class="text">
+                                <div>
+                                    <div class="line_1 underline">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.</div>
+                                </div>
+                                <div>
+                                    <div class="line_2 underline">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="line_3 underline">천자만홍이 보이는 아름답고 심장의 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="writer">
+                                <span class="by">by</span>
+                                <span class="name">ooo기자</span></div>
+                        </a>
+                    </li>
+
+
+
+                </ul>
+
+
+            </div>
+            <div class="button left">1</div>
+            <div class="button right button_before">2</div>
+            <div class="page_num_cont page_num_before">
+                <ul class="page_num">
+                    <li class="dot">1</li>
+                    <li class="dot">2</li>
+                    <li class="dot">3</li>
+                    <li class="dot">4</li>
+                    <li class="dot">5</li>
+                </ul>
+            </div>
+        </div>
+        <!--카드 ui-->
+
+
+        <!--    같은 주제 다른 요약-->
+
+    </div>
+
+    {% comment %} <footer>
+        <div class="footer">
+            <div class="foot_container_1">
+
+                <div class="foot_info_1">
+                    <div id="bold">안내</div>
+                    <div class="normal">공지사항</div>
+                    <div class="normal">자주 묻는 질문</div>
+                    <div class="normal">계정 일시 잠금</div>
+                    <div class="normal">공고</div>
+                </div>
+
+                <div class="foot_info_2">
+                    <div id="bold">기타문의</div>
+                    <div class="normal">비즈니스 제휴</div>
+                    <div class="normal">마케팅 PR</div>
+                </div>
+
+                <div class="foot_info_3">
+                    <div id="bold">고객센터</div>
+                    <div class="normal">전화:<span>1234-5678</span></div>
+                    <div class="normal">이메일 :<span>abcd1234@likelion.org</span></div>
+                    <div class="normal">카카오톡 :<span>@Tons</span> </div>
+                </div>
+
+            </div>
+            <div class="foot_container_2">
+                <div class="normal">(주)톤즈&nbsp;&nbsp;&nbsp;&nbsp;사업자등록번호 : 123-45-6789</div>
+                <div class="normal">서울특별시 동대문구 전농동 서울시립대로 163</div>
+
+                <div class="law_container">
+                    <div class="law">
+
+                        <div id="law">서비스 이용약관&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이용자의 권리 및 유의사항&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;개인정보 처리방침&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;위치기반서비스 이용약관</div>
+                    </div>
+                    <div class="law_button">
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
-
-            <ul class="category_article">
-            {% for summary in summary_list %}
-                <li>
-                    <a href="#">
-                        <div class="category_article_content">
-                            <div class="category_article_textcontainer">
-                                <div class="text">
-                                    <div class="line_1">
-                                        {{summary.content}}
-                                    </div>
-                                    <!-- <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                    </div>
-                                    <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
-                                    </div>
-                                    <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                                    </div> -->
-                                    <div class="summary_info">
-                                        <p>by 닉네임 <span>Jul 25.2019</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                            {% if user.is_authenticated %}
-                            <div class="category_article_othercontainer">
-                                <div class="littlebox">
-                                    <div class="square"
-                                        style=" width: 20px;   height: 20px;   background-color: #6f6f6f;"></div>
-                                    <div class="goodbad">
-                                        <a href="{% url 'article:summary_obj' summary.id %}">
-                                        {% if article in user.profile.obj_sum.all %}
-                                            취소
-                                        {% else %}
-                                            좋아요
-                                        {% endif %}
-                                        </a>
-                                    <span class="num">{{summary.obj_count}}</span> </div>
-                                </div>
-                                <div class="littlebox">
-                                    <div class="vs">VS</div>
-                                </div>
-                                <div class="littlebox">
-                                    <div class="square"
-                                        style=" width: 20px;   height: 20px;   background-color: #6f6f6f;"></div>
-                                    <div class="goodbad">
-                                        <a href="{% url 'article:summary_sbj' summary.id %}">
-                                        {% if article in user.profile.sbj_sum.all %}
-                                            취소
-                                        {% else %}
-                                            글쎄요
-                                        {% endif %}
-                                        </a>    
-                                    <span class="num">{{summary.sbj_count}}</span></div>
-                                </div>
-                            </div>
-                            {% endif %}
-                        </div>
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
         </div>
-    </div>
-    <!--    같은 기사 다른 요약-->
+    </footer> {% endcomment %}
 
-
-
-    <div class="card_container_wrapper">
-        <div class="headline">
-            <div class="headline_2">IT 관련 다른 기사는 어떠세요?</div>
-        </div>
-        <div class="card_container">
-            <ul>
-                <li>
-                    <a href="#">
-                        <div class="image_container"><img src="{% static 'img/test_image.png' %}" alt="">
-                            <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                            </div>
-                        </div>
-                        <div class="text">
-                            <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                            </div>
-                            <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
-                            </div>
-                            <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                            </div>
-                        </div>
-
-                        <div id="writer">
-                            <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="image_container"><img src="{% static 'img/test_image.png' %}" alt="">
-                            <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                            </div>
-                        </div>
-                        <div class="text">
-                            <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                            </div>
-                            <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
-                            </div>
-                            <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                            </div>
-                        </div>
-
-                        <div id="writer">
-                            <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="image_container"><img src="{% static 'img/test_image.png' %}" alt="">
-                            <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                            </div>
-                        </div>
-                        <div class="text">
-                            <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                            </div>
-                            <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
-                            </div>
-                            <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                            </div>
-                        </div>
-
-                        <div id="writer">
-                            <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="image_container"><img src="{% static 'img/test_image.png' %}" alt="">
-                            <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                            </div>
-                        </div>
-                        <div class="text">
-                            <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                            </div>
-                            <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
-                            </div>
-                            <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                            </div>
-                        </div>
-
-                        <div id="writer">
-                            <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="image_container"><img src="{% static 'img/test_image.png' %}" alt="">
-                            <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                            </div>
-                        </div>
-                        <div class="text">
-                            <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                            </div>
-                            <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
-                            </div>
-                            <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                            </div>
-                        </div>
-
-                        <div id="writer">
-                            <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
     <!--같은 주제 다른 기사-->
 
-{% endblock contents %}
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            var sibalsi = window.screen.height; 
+            console.log(sibalsi);
+            $('.detail_wrapper').css({
+                'height': (sibalsi - 80) + 'px'
+            });
+
+            $('#article_height').css({
+                'height': (sibalsi - 504) + 'px'
+            });
+
+
+            // window 크기에 맞는 detail 페이지 로딩사이즈
+            //var winHeight = $(window).height();
+           var currentH = $('.detail_wrapper').height() - 304;
+            var currentGh = $('.gradation').height();
+            var moveTooo = $('#article_height');
+
+            $('#pageExpand').click(function() {
+                $('.detail_article_wrapper').css('overflow-y', 'visible'),
+
+                    $('#article_height').css("height", "100%");
+                var h = $('#article_height').height();
+                $('#article_height').css("height", currentH),
+
+                    $('#article_height').animate({
+                        height: h,
+                    }, 1000),
+
+                    //                    $('.gradation').css('height', currentGh),
+
+                    $('.gradation').animate({
+                        height: 0,
+                    }, 1000),
+
+                    $(this).css('opacity', '1');
+                $(this).animate({
+                        opacity: 0,
+                    }, 1000),
+
+                    $('#move').slideDown(function() {
+                        $(this).insertAfter(moveTooo).slideDown();
+                    }),
+
+                    $([document.documentElement, document.body]).animate({
+                        scrollTop: $('.detail_article_title_aligncenter').offset().top
+                    }, 700);
+
+                //                $('.footer').css("margin-top", 304 + h + 1138);
+           
+                var jebal = $('.jebaljom').height();
+                console.log(jebal);
+                var jebal2 = jebal - winHeight;
+                var footerheight = $('.footer').height;
+                console.log(footerheight);
+                $('.footer').css("margin-top", jebal2 + 1478 + 614 + footerheight + 64);
+
+
+                //                    $('.footer').appendTo("#footerTest");
+
+            });
+
+            // 스크롤 아래로 내려오기~ //
+
+
+
+            var commentLength = $('.comment').length;
+            //                    console.log(commentLength);
+
+            var commentCompressLength = Math.ceil(commentLength / 5);
+            //             console.log(commentCompressLength);
+
+            $('.category_comment').css('width', commentCompressLength * 960);
+            // comment 수에맞는 너비
+
+
+            var nindexNumber = commentCompressLength - 1;
+            $('.nindex').eq(0).addClass('active2');
+            //초기 인덱스 설정
+
+            //            console.log(nindexNumber);
+
+            var commentPage = $('.commentPage');
+
+            //                var realIndex = 0;
+            //                console.log(realIndex);
+
+            var t;
+            for (t = 1; t < commentCompressLength + 1; t++) {
+                console.log(t);
+                $('.number_index').append('<li></li>');
+                $('.number_index li').addClass('nindex');
+                $('.nindex:nth-child(' + t + ')').html(t);
+            };
+
+            $('.nindex').on("click", function() {
+                var realNumber = $('.nindex').index(this);
+                var realIndex = $('.nindex').eq(realNumber);
+                //               console.log(realIndex);
+                //                console.log(realNumber);
+
+                $('.nindex').eq(realNumber).addClass('active2');
+                $('.nindex').not(realIndex).removeClass('active2');
+
+                if (commentCompressLength > realNumber - 1) {
+                    commentPage.css({
+                        marginLeft: -realNumber * 960
+                    });
+                };
+            });
+
+
+
+
+
+
+            $('.clue').hover(function() {
+
+                    $(this).find('.underline').addClass("hovered"),
+                        $(this).addClass('hoveredUp'), $(this).removeClass('hoveredDown'),
+                        $(this).removeClass('show'), $(this).removeClass('fadein');
+                } // 호버된 요소에 클래스를 추가
+                ,
+                function() {
+                    $(this).find('.underline').removeClass("hovered"), $(this).removeClass('hoveredUp'), $(this).addClass('hoveredDown'); // 호버된 요소에 클래스를 추가
+                });
+
+            var totalLength = $('.card_width').length;
+            $('.card_container').css('width', totalLength * 488 + 32);
+            //너비 계산//
+            console.log(totalLength);
+
+            var cont = $('.card_container')
+            var card_position = 2;
+            var pageNum = 0;
+            console.log(pageNum);
+
+            $('.dot').eq(pageNum).addClass('active');
+
+            $('.left').addClass('opacity');
+
+            function right() {
+                if (totalLength > card_position) {
+                    cont.animate({
+                        marginLeft: '-=976px'
+                    }, 800);
+                    card_position = 2 + card_position;
+                    console.log(card_position);
+
+                    $('.dot').eq(card_position / 2 - 1).addClass('active');
+
+                    $('.dot').eq(card_position / 2 - 2).removeClass('active');
+
+                    if (card_position == totalLength) {
+                        $('.right').addClass('opacity');
+
+                    } else if (card_position < totalLength) {
+                        $('.right').removeClass('opacity');
+                    }
+
+                    if (card_position > 2) {
+                        $('.left').removeClass('opacity');
+
+                    } else if (card_position == 2) {
+                        $('.left').addClass('opacity');
+                    }
+
+
+
+                }
+            }
+
+            function left() {
+                if (card_position > 2) {
+                    cont.animate({
+                        marginLeft: '+=976px'
+                    }, 800);
+                    card_position = card_position - 2;
+                    console.log(card_position);
+
+                    $('.dot').eq(card_position / 2 - 1).addClass('active');
+                    //
+                    $('.dot').eq(card_position / 2).removeClass('active');
+
+                    if (card_position == totalLength) {
+                        $('.right').addClass('opacity');
+
+                    } else if (card_position < totalLength) {
+                        $('.right').removeClass('opacity');
+                    }
+
+                    if (card_position > 2) {
+                        $('.left').removeClass('opacity');
+
+                    } else if (card_position == 2) {
+                        $('.left').addClass('opacity');
+                    }
+
+                }
+            }
+
+
+            $('.right').on("click", function() {
+                right();
+            });
+
+
+            $('.left').on("click", function() {
+                left();
+            });
+
+            $('.dot').on("click", function() {
+                //                console.log(card_position);
+                var dotIndex = $(this).index() * 2;
+                //                console.log(dotIndex);
+
+                card_position = dotIndex + 2;
+                console.log(card_position);
+
+                var dot = $('.dot').eq(card_position / 2 - 1);
+
+                $('.dot').eq(card_position / 2 - 1).addClass('active');
+
+                $('.dot').not(dot).removeClass('active');
+
+                cont.animate({
+                    marginLeft: -dotIndex / 2 * 976
+                }, 800);
+
+                if (card_position == totalLength) {
+                    $('.right').addClass('opacity');
+
+                } else if (card_position < totalLength) {
+                    $('.right').removeClass('opacity');
+                }
+
+                if (card_position > 2) {
+                    $('.left').removeClass('opacity');
+
+                } else if (card_position == 2) {
+                    $('.left').addClass('opacity');
+                }
+
+            });
+
+
+            /* 메인 카드컨테이너 좌우 이동*/
+
+
+
+            $(window).scroll(function() {
+                $('.fadein').each(function(i) {
+
+                    var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+                    var bottom_of_window = $(window).scrollTop() + suba
+
+                    if (bottom_of_window > bottom_of_object) {
+
+                        $(this).fadeIn(2000, function() {
+                            $(this).addClass("show")
+                        });
+                    }
+                });
+
+            });
+
+            /* 스크롤링 페이드 인 아웃 */
+
+            $('.title_1').addClass('winLoad_1'),
+                $('.title_1').removeClass('winLoadBefore');
+
+            $('.title_2').addClass('winLoad_2'), $('.title_2').removeClass('winLoadBefore');
+
+            $('.title_4').addClass('winLoad_3'), $('.title_4').removeClass('winLoadBefore');
+
+            /* title 옆에서 오기 */
+
+            var a = 0;
+            var cardCheck = $('.card_check');
+
+            function myLoop() {
+                setTimeout(function() {
+                    //                    console.log(a);
+                    cardCheck.eq(a).addClass('winLoad_test'),
+                        cardCheck.eq(a).removeClass('winLoadBefore_2');
+                    a++;
+                    if (a < totalLength) {
+                        myLoop();
+                    }
+                }, 75)
+            }
+            myLoop();
+
+            /* 카드 순서대로*/
+
+            $('.page_num_cont').addClass('page_num_load'),
+                $('.page_num_cont').removeClass('page_num_before');
+
+            $('.right').addClass('button_load'),
+                $('.right').removeClass('button_before');
+
+            $('.category_container').addClass('category_title_load'),
+                $('.category_container').removeClass('category_title_before');
+
+
+        });
+
+
+    </script>
+</body>
+
