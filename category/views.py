@@ -25,6 +25,12 @@ def cat_add(request, user_id, category_id):
     profile.category.add(Category.objects.get(id=category_id))
     return redirect('mypage', user_id= user.id)
 
+def cat_remove(request, user_id, category_id):
+    user = User.objects.get(id = user_id)
+    profile = Profile.objects.get(user = user)
+    profile.category.remove(Category.objects.get(id=category_id))
+    return redirect('mypage', user_id= user.id)   
+
 def cat_detail(request, category_id):
     category = get_object_or_404(Category, pk = category_id)
     article_list = Article.objects.filter(category=category_id)

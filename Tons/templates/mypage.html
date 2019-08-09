@@ -23,7 +23,7 @@
             <div class="box_container">
                 <ul>
                     {% for category in user_cat_list %}
-                    <li><a href="{% url 'category:cat_detail' category.id %}">{{category.name}}</a></li>
+                    <li><a href="{% url 'category:cat_remove' user.id category.id %}">{{category.name}}</a></li>
                     {% endfor %}
                 </ul>
                 
