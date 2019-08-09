@@ -13,6 +13,8 @@ def home(request, user_id = None):
 
     top10_article = Article.objects.order_by('-stars')[:10]
     top10_best_summ_list = dict()
+    best_summ_list = dict()
+    
     for article in top10_article:
         try:
             top10_best_summ_list[article.id] = Summary.objects.filter(belongsto_article=article.id).latest('obj_count')
@@ -29,7 +31,7 @@ def home(request, user_id = None):
         
         user_cat_list = profile.category.all()
         user_category = dict()
-        best_summ_list = dict()
+        
         for category in user_cat_list:
             try:
                 article = Article.objects.filter(category=category.id).latest('stars')
@@ -44,7 +46,7 @@ def home(request, user_id = None):
         return render(request, 'home.html', {'top10_article' : top10_article,'article_by_category': user_category, 'best_summ_list':best_summ_list, 'top10_best_summ_list':top10_best_summ_list})
 
     else: #최신 기사가 올라온 카테고리 3개
-        new_article = Article.objects.order_by('-pub_date')[:3]
+        new_article = Article.objects.order_by('-pub_date')[:5]
         rand_category_list = []
         
         for article in new_article:

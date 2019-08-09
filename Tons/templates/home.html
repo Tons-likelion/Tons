@@ -32,7 +32,7 @@
                     <a href="{% url 'article:detail' top10.id %}">
                         <div class="image_container">
                             {% if top10.thumbnail %}
-                            <div class="img_wrap_1"><img src="{% thumbnail top10.thumbnail 600x400 crop %}" alt=""></div>
+                            <div class="img_wrap_1"><img src="{% thumbnail top10.thumbnail 472x290 crop %}" alt=""></div>
                             {% else %}
                             <div class="img_wrap_1"><img src="{% static 'img/test_image.png' %}" alt=""></div>
                             {% endif %}
@@ -103,8 +103,11 @@
                 <li>
                     <a href="#">
                         <div class="category_article_content">
-                            <div class="img_wrap_2">
-                                <img src="{%static 'img/test_photo_2.png'%}" alt=""></div>
+                            {% if article.thumbnail %}
+                            <div class="img_wrap_2"><img src="{% thumbnail article.thumbnail 130x130 crop %}" alt=""></div>
+                            {% else %}
+                            <div class="img_wrap_2"><img src="{% static 'img/test_image.png' %}" alt=""></div>
+                            {% endif %}
                             <div class="category_article_textcontainer">
                                 <div class="catebory_article_title">
                                     {{article.title}}
