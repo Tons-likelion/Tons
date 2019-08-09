@@ -216,3 +216,42 @@
 .card_container li {
     box-shadow: none;
 }
+
+ .active2 {
+            opacity: 1;
+        }
+
+
+        .number_index {
+            display: flex;
+            margin: 0 auto;
+            justify-content: center;
+            padding-top: 48px;
+        }
+
+        .number_index li {
+            font-family: 'DM Serif Display';
+            font-size: 16px;
+            color: #000000;
+            letter-spacing: 0;
+            opacity: 0.25;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        .number_index li:first-child {
+            opacity: 0.87;
+        }
+
+        .nomore {
+            display: flex;
+            justify-content: center;
+            padding-top: 32px;
+            opacity: 0.6;
+            font-family: 'Noto Sans KR';
+            font-size: 16px;
+            color: #000000;
+            letter-spacing: -0.36px;
+            text-align: center;
+            line-height: 16px;
+        }
