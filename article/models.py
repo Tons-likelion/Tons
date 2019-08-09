@@ -10,7 +10,7 @@ class Article(models.Model):
     title = models.CharField(max_length=200)
     writer = models.CharField(max_length=50)
     pub_date = models.DateTimeField(auto_now_add=False)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, null = True)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null = True)
     content = models.TextField()
     original = models.TextField()
     stars = models.FloatField(default=0)
