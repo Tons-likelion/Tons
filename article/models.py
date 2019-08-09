@@ -14,6 +14,7 @@ class Article(models.Model):
     content = models.TextField()
     original = models.TextField()
     stars = models.FloatField(default=0)
+    stars_count = models.PositiveIntegerField(default=0)
     photo = models.ImageField(upload_to="media\img", null=True, blank=True)
     thumbnail = ThumbnailerImageField(upload_to='article', blank=True)
     

@@ -1,0 +1,61 @@
+header {
+    width: 100%;
+}
+
+.header_container {
+    width: 90%;
+    height: 80px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    /*    세로 가운데정렬*/
+}
+
+.header_container_nav {
+    width: 100%;
+    margin: 0 118px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo_tons {
+    width: 30px;
+    height: 30px;
+    background-color: #6f6f6f;
+}
+
+
+nav ul {
+    margin: 0;
+
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+}
+
+nav ul li {
+    text-align: right;
+    opacity: 0.6;
+    font-family: 'Noto Sans KR', serif;
+    font-size: 1rem;
+}
+
+nav ul li:nth-child(1) {
+    margin-left: 8px;
+}
+
+nav ul li:nth-child(2) {
+    padding-left: 64px;
+}
+
+.logo_pen {
+    width: 20px;
+    height: 20px;
+    background-color: #6f6f6f;
+}
+

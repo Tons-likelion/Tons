@@ -248,6 +248,8 @@ nav ul li:nth-child(2) {
     bottom: 0;
     left: 0;
     width: 424px;
+    height:30px;
+    overflow:hidden;
     
     margin-left: 24px;
     margin-right: 24px;

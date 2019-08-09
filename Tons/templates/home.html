@@ -2,10 +2,14 @@
 
 
 {% load staticfiles %}
+{% load thumbnail %}
 {% block title %}
 <title>Tons: homepage</title>
 {% endblock title %}
 
+    {% block css %}
+ <link rel="stylesheet" type="text/css" href="{%static 'css/home.css'%}">
+    {% endblock %}
 
     {% block contents %}
     
@@ -27,10 +31,14 @@
         <div class="card_container">
             <ul>
                 {% for top10 in top10_article %}
-                <li>
-                    <a href="{% url 'article:detail' article.id %}">
+                <li class="clue card_width card_check windLoadBefore_2">
+                    <a href="{% url 'article:detail' top10.id %}">
                         <div class="image_container">
+                            {% if top10.thumbnail %}
+                            <div class="img_wrap_1"><img src="{% thumbnail top10.thumbnail 600x400 crop %}" alt=""></div>
+                            {% else %}
                             <div class="img_wrap_1"><img src="{% static 'img/test_image.png' %}" alt=""></div>
+                            {% endif %}
                             <div class="article_title">
                                 {{top10.title}}
                             </div>
@@ -38,16 +46,16 @@
                         <div class="text">                        
                             {% for key, value in top10_best_summ_list.items %}
                             {% if key == top10.id %}
-                            <div class="line_1">{{ value }}</div>
+                            <div class="line_1 underline">{{ value }}</div>
                             {% endif %}
                             {% endfor %}
-                            {% comment %} <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                            </div>
+                            {% comment %}
+                            
                             <div>
                                 <div class="line_2 underline">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
                                 </div>
                             </div>
-                            <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
+                            <div class="line_3 underline"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
                             </div> {% endcomment %}
                         </div>
 
