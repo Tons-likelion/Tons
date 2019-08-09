@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
-from django.contrib import auth
+from django.contrib import auth, messages
 from .models import Profile
 
 # Create your views here.
@@ -16,6 +16,10 @@ def signup(request):
                 user = User.objects.create_user(username=username, password=password) #장고의 createsuperuser 을 가져옴. admin 페이지에서 User테이블 확인
                 author = Profile(user = user, email = request.POST.get('email'))
                 author.save() #저장꼭!
+                user = auth.authenticate(request, username=username, password=password)
+                if user is not None:
+                    if user.is_active:
+                        auth.login(request, user)
             except:
                 errmsg = "회원가입이 실패했습니다."
                 return render(request, 'accounts/signup.html', {'errmsg': errmsg})
@@ -37,11 +41,12 @@ def login(request):
         password = request.POST.get('password')
         user = auth.authenticate(request, username=username, password=password) #로그인 정보 확인
         if user is not None:
-            auth.login(request, user)
-            return redirect('home', user.id)
+            if user.is_active:
+                auth.login(request, user)
+                return redirect('home', user.id)
         else:   #TODO 로그인 정보가 없을때
-            pass
-        return render(request,'accounts/login.html')
+            messages.error(request, '아이디 혹은 비밀번호가 올바르지 않습니다.')
+            return render(request,'accounts/login.html')
     else:   #TODO 회원가입 페이지로 접속할때
         pass
     return render(request,'accounts/login.html')
