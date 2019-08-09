@@ -287,11 +287,3 @@ nav ul li:nth-child(2) {
 }
 
 
-
-footer {
-    width: 100%;
-    /* 아래는 테스트용 */
-    height: 280px;
-    background-color: black;
-    opacity: 0.87;
-}
