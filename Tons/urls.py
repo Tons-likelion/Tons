@@ -25,6 +25,7 @@ urlpatterns = [
 
     path('mypage/<int:user_id>/', category.views.mypage, name='mypage'),
 
+    path('category/', include('category.urls')),
     path('article/', include('article.urls')),
     path('accounts/', include('accounts.urls')),
 

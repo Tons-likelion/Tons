@@ -22,8 +22,8 @@
             
             <div class="box_container">
                 <ul>
-                    {% for category in cat_list %}
-                    <li>{{category.name}}</li>
+                    {% for category in user_cat_list %}
+                    <li><a href="{% url 'category:cat_detail' category.id %}">{{category.name}}</a></li>
                     {% endfor %}
                 </ul>
                 
@@ -44,12 +44,9 @@
             
             <div class="offer_box_container">
                 <ul>
-                    <li>IT/과학</li>
-                    <li>문화</li>
-                    <li>포토</li>
-                    <li>세계</li>
-                    <li>연예</li>
-                    <li>TV</li>
+                    {% for category in other_cat_list %}
+                    <li><a href="{% url 'category:cat_detail' category.id %}">{{category.name}}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
     </div>
