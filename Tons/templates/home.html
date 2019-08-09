@@ -50,90 +50,7 @@
                             <span class="name">ooo기자</span></div>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <div class="image_container"><img src="{% static 'img/test_image.png' %}" alt="">
-                            <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                            </div>
-                        </div>
-                        <div class="text">
-                            <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                            </div>
-                            <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
-                            </div>
-                            <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                            </div>
-                        </div>
-
-                        <div id="writer">
-                            <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="image_container"><img src="{% static 'img/test_image.png' %}" alt="">
-                            <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                            </div>
-                        </div>
-                        <div class="text">
-                            <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                            </div>
-                            <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
-                            </div>
-                            <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                            </div>
-                        </div>
-
-                        <div id="writer">
-                            <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="image_container"><img src="{% static 'img/test_image.png' %}" alt="">
-                            <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                            </div>
-                        </div>
-                        <div class="text">
-                            <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                            </div>
-                            <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
-                            </div>
-                            <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                            </div>
-                        </div>
-
-                        <div id="writer">
-                            <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="image_container"><img src="{% static 'img/test_image.png' %}" alt="">
-                            <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                            </div>
-                        </div>
-                        <div class="text">
-                            <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                            </div>
-                            <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
-                            </div>
-                            <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                            </div>
-                        </div>
-
-                        <div id="writer">
-                            <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
-                    </a>
-                </li>
+                
             </ul>
         </div>
     </div>
@@ -148,9 +65,12 @@
 
                 <div class="category">
                     <ul>
+                    {% if profile.is_active %}
                         <li>IT</li>
-                        <li>IT</li>
-                        <li>IT</li>
+                    {% else %}
+
+                    {% endif %}
+                        
                     </ul>
 
                 </div>
@@ -185,114 +105,7 @@
                         </div>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <div class="category_article_content">
-                            <img src="{%static 'img/test_photo_2.png'%}" alt="">
-                            <div class="category_article_textcontainer">
-                                <div class="catebory_article_title">
-                                    “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                                </div>
-                                <div class="text">
-                                    <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                    </div>
-                                    <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
-                                    </div>
-                                    <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="category_article_othercontainer">
-                                <div id="category_category">IT</div>
-                                <div id="writer">
-                                    <span class="by">by</span>
-                                    <span class="name">ooo기자</span></div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="category_article_content">
-                            <img src="{%static 'img/test_photo_2.png'%}" alt="">
-                            <div class="category_article_textcontainer">
-                                <div class="catebory_article_title">
-                                    “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                                </div>
-                                <div class="text">
-                                    <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                    </div>
-                                    <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
-                                    </div>
-                                    <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="category_article_othercontainer">
-                                <div id="category_category">IT</div>
-                                <div id="writer">
-                                    <span class="by">by</span>
-                                    <span class="name">ooo기자</span></div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="category_article_content">
-                            <img src="{%static 'img/test_photo_2.png'%}" alt="">
-                            <div class="category_article_textcontainer">
-                                <div class="catebory_article_title">
-                                    “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                                </div>
-                                <div class="text">
-                                    <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                    </div>
-                                    <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
-                                    </div>
-                                    <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="category_article_othercontainer">
-                                <div id="category_category">IT</div>
-                                <div id="writer">
-                                    <span class="by">by</span>
-                                    <span class="name">ooo기자</span></div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="category_article_content">
-                            <img src="{%static 'img/test_photo_2.png'%}" alt="">
-                            <div class="category_article_textcontainer">
-                                <div class="catebory_article_title">
-                                    “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                                </div>
-                                <div class="text">
-                                    <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                    </div>
-                                    <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
-                                    </div>
-                                    <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="category_article_othercontainer">
-                                <div id="category_category">IT</div>
-                                <div id="writer">
-                                    <span class="by">by</span>
-                                    <span class="name">ooo기자</span></div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
+                
 
             </ul>
         </div>
