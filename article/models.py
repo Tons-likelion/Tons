@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from accounts.models import Profile
 from category.models import Category
+from easy_thumbnails.fields import ThumbnailerImageField
 # Create your models here.
 
 class Article(models.Model):
@@ -13,8 +14,8 @@ class Article(models.Model):
     content = models.TextField()
     original = models.TextField()
     stars = models.FloatField(default=0)
-    stars_count = models.PositiveIntegerField(default=0)
-    photo = models.ImageField(upload_to="static\img", null=True, blank=True)
+    photo = models.ImageField(upload_to="media\img", null=True, blank=True)
+    thumbnail = ThumbnailerImageField(upload_to='article', blank=True)
     
     def __str__(self):
         return self.title
