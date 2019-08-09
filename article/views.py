@@ -21,11 +21,14 @@ def summary(request, article_id):
     if request.method == "POST":
         summary = Summary()
         summary.belongsto_article = Article.objects.get(id=article_id)
-        user = request.user
-        profile = Profile.objects.get(user=user)
-        summary.belongsto_user = profile
-        summary.content = request.POST['content']
-        summary.save()
+        try:
+            user = request.user
+            profile = Profile.objects.get(user=user)
+            summary.belongsto_user = profile
+            summary.content = request.POST['content']
+            summary.save()
+        except: #TODO: 유저 로그인 안했을 경우
+            pass
         return redirect('article:detail', article_id)
     else:
         return render(request, 'article/summary.html')
@@ -33,8 +36,11 @@ def summary(request, article_id):
 def summary_obj(request, summary_id):
     
     summary = Summary.objects.get(id=summary_id)
-    user = request.user
-    profile = Profile.objects.get(user=user)
+    try:
+        user = request.user
+        profile = Profile.objects.get(user=user)
+    except: #TODO: 유저로그인 안했을경우
+        pass
 
     check_sbj_sum = profile.sbj_sum.filter(id=summary_id)
 

@@ -20,17 +20,26 @@ def mypage(request, user_id):
 def cat_detail(request, category_id):
     category = get_object_or_404(Category, pk = category_id)
     article_list = Article.objects.filter(category=category_id)
-
-    def best_summ():
-        pass
-
     best_summ_list = dict()
+
     for article in article_list:
-            if Summary.objects.filter(belongsto_article=article.id):
-                best_summ_list[article.id] = Summary.objects.filter(belongsto_article=article.id).latest('obj_count')
+        try:
+            best_summ_list[article.id] = Summary.objects.filter(belongsto_article=article.id).latest('obj_count')
+            # result['best_summ'] = Summary.objects.get(belongsto_article = article.id )
+        except: #요약이 하나도 없을 경우
+            best_summ_list[article.id] = '아직 요약이 없습니다!'
+
     context = {
-        'category':category,
-        'article_list':article_list,
-        # 'best_summ_list' : best_summ_list,
+    'category':category,
+    'article_list':article_list,
+    'best_summ_list' : best_summ_list,
     }
+
+    
+    from django.template.defaulttags import register
+
+    @register.filter
+    def get_item(dictionary, key):
+        return dictionary.get(key)
+
     return render(request, 'category/category_detail.html', context)

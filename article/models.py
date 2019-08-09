@@ -36,6 +36,6 @@ class Summary(models.Model):
         return self.content
         
     class Meta:
-        # get_latest_by = "-obj_count"
+        get_latest_by = "obj_count"
         ordering = ['-pub_date']
         verbose_name_plural = "Summaries"
