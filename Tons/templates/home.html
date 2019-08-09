@@ -89,7 +89,7 @@
                 <div class="category">
                     <ul>
                     {% for category in article_by_category.keys %}
-                        <li>{{category.name}}</li>
+                        <a href ="{% url 'category:cat_detail' category.id%}"><li>{{category.name}}</li>
                     {% endfor %}
                     </ul>
 
@@ -101,7 +101,7 @@
                 {% for category,article in article_by_category.items %}
                 {% comment %} 카테고리 별로 별점 높은 기사 하나씩 불러오기 {% endcomment %}
                 <li>
-                    <a href="#">
+                    <a href="{% url 'article:detail' article.id%}">
                         <div class="category_article_content">
                             {% if article.thumbnail %}
                             <div class="img_wrap_2"><img src="{% thumbnail article.thumbnail 130x130 crop %}" alt=""></div>

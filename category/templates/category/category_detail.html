@@ -2,6 +2,7 @@
 
 
 {% load staticfiles %}
+{% load thumbnail %}
 
 
 {% block title %}
@@ -33,9 +34,14 @@
             <ul class="category_article">
                 {% for article in article_list%}
                 <li>
-                    <a href="#">
+                    <a href="{% url 'article:detail' article.id%}">
                         <div class="category_article_content">
-                            <img src="{% static 'img/test_photo_2.png' %}" alt="">
+                            {% if article.thumbnail %}
+                            <img src="{% thumbnail article.thumbnail 130x130 crop %}" alt="">
+                            {% else %}
+                            <img src="{% static 'img/test_image.png' %}" alt="">
+                            {% endif %}
+
                             <div class="category_article_textcontainer">
                                 <div class="catebory_article_title">
                                     <a href="{% url 'article:detail' article.id %}">{{article.title}}</a>
