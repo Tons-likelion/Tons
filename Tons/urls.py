@@ -30,7 +30,7 @@ urlpatterns = [
     path('mypage/<int:user_id>/', category.views.mypage, name='mypage'),
 
     path('category/', include('category.urls')),
-    path('article/', include('article.urls')),
+    path('article/', include('article.urls', namespace="article")),
     path('accounts/', include('accounts.urls')),
 
     # path('cat_detail', base_app.views.category_detail, name='cat_detail'), #추후 url 수정 필요

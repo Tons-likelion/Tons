@@ -2,6 +2,7 @@
 
 
 {% load staticfiles %}
+{% load thumbnail %}
 {% block title %}
 <title>Tons: homepage</title>
 {% endblock title %}
@@ -30,7 +31,11 @@
                 <li>
                     <a href="{% url 'article:detail' top10.id %}">
                         <div class="image_container">
+                            {% if top10.thumbnail %}
+                            <div class="img_wrap_1"><img src="{% thumbnail top10.thumbnail 600x400 crop %}" alt=""></div>
+                            {% else %}
                             <div class="img_wrap_1"><img src="{% static 'img/test_image.png' %}" alt=""></div>
+                            {% endif %}
                             <div class="article_title">
                                 {{top10.title}}
                             </div>
