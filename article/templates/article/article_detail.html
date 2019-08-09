@@ -136,7 +136,12 @@
                 {% for other in other_articles%}
                 <li>
                     <a href="{% url 'article:detail' other.id%}">
-                        <div class="image_container"><img src="{% static 'img/test_image.png' %}" alt="">
+                        <div class="image_container">
+                        {% if other.thumbnail %}
+                            <img src="{% thumbnail other.thumbnail 472x290 crop %}" alt="">
+                            {% else %}
+                           <img src="{% static 'img/test_image.png' %}" alt="">
+                            {% endif %}
                             <div class="article_title">
                                 {{other.title}}
                             </div>
