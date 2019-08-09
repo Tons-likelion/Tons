@@ -8,12 +8,11 @@ from accounts.models import Profile
 
 def detail(request, article_id):
     article = get_object_or_404(Article, pk = article_id)
-    summary_list = Summary.objects.filter(belongsto_article=article_id)
+    summary_list = Summary.objects.filter(belongsto_article=article)
     context = {
         'article':article,
         'summary_list':summary_list,
     }
-
     return render(request,"article/article_detail.html", context)
 
 def summary(request, article_id):

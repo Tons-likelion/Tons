@@ -18,6 +18,9 @@ from django.urls import path, include
 import Tons.views
 import category.views
 
+from django.conf.urls.static import static
+from django.conf import settings
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -32,3 +35,5 @@ urlpatterns = [
     # path('cat_detail', base_app.views.category_detail, name='cat_detail'), #추후 url 수정 필요
 
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
