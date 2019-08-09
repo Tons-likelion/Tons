@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'article.apps.ArticleConfig',
     'accounts',
     'category',
+    'easy_thumbnails',
 
 ]
 
@@ -127,5 +128,10 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static') #Tons 아래 static 폴더
 ]
 
+# 각 media 파일에 대한 URL Prefix
+MEDIA_URL = '/'
+
+# 업로드된 파일을 저장할 디렉토리 경로
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_REDIRECT_URL = '/'
