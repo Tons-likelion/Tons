@@ -12,14 +12,16 @@ def signup(request):
         password = request.POST.get('password')
         psudo_password = request.POST.get('psudo_password')
         if password == psudo_password :
-            user = User.objects.create_user(username=username, password=password) #장고의 createsuperuser 을 가져옴. admin 페이지에서 User테이블 확인
-            author = Profile()
-            author.user = user
-            author.email = request.POST.get('email')
-            author.save() #저장꼭!
+            try:
+                user = User.objects.create_user(username=username, password=password) #장고의 createsuperuser 을 가져옴. admin 페이지에서 User테이블 확인
+                author = Profile(user = user, email = request.POST.get('email'))
+                author.save() #저장꼭!
+            except:
+                errmsg = "회원가입이 실패했습니다."
+                return render(request, 'accounts/signup.html', {'errmsg': errmsg})
+            return redirect('home')
         else : #TODO 비밀번호가 틀릴 시
             pass
-        return redirect('home') #render()가 아님!!
     else:   #TODO 회원가입 페이지로 접속할때
         pass
     return render(request, 'accounts/signup.html')

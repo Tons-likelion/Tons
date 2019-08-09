@@ -42,6 +42,9 @@
                 <div class="login_password_confirm"><input type="password" placeholder="비밀번호 확인" name = "psudo_password"></div>
             </li>
         </ul>
+        {% if errmsg %}
+            {{errmsg}}
+        {% endif %}
         <div class="password_not">패스워드가 일치하지 않습니다.</div>
         <div ><input type="submit" value="가입하기" class="login_login"></div>
         </form>

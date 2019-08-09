@@ -2,11 +2,13 @@ from django.shortcuts import get_object_or_404, redirect, render
 from accounts.models import Profile
 from article.models import Article, Summary
 from .models import Category
+from django.contrib.auth.models import User
 
 # Create your views here.
 def mypage(request, user_id):
-    user = get_object_or_404(Profile, pk = user_id)
-    user_cat_list = user.category.all()
+    user = User.objects.get(id = user_id)
+    profile = Profile.objects.get(user = user)
+    user_cat_list = profile.category.all()
     other_cat_list = []
     for cat in Category.objects.all():
         if cat not in user_cat_list:
