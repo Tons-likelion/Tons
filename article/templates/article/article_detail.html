@@ -21,6 +21,11 @@
                 <p>{{article.content}}</p>
                 <p>{{article.pub_date}}</p>
                 <p>{{article.stars}}</p>
+                {% if user.is_active %}
+                    <a href="{% url 'article:stars' article.id %}">별점 매기기</a>
+                {% else %}
+                    <a href="{% url 'accounts:login'%}">별점 매기기</a>
+                {% endif %}
             </div>
         </div>
         <div class="lines">

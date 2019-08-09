@@ -1,4 +1,4 @@
-<form method="POST" action="{% url 'signup'%}">
+<form method="POST" action="">
 
     {% csrf_token %}
     <select name="star_score" id="star_score">
@@ -8,5 +8,6 @@
         <option value="2">2</option>
         <option value="1">1</option>
     </select>
-    <input type="submit" value="">
+    <input type="submit" value="submit">
+
 </form>

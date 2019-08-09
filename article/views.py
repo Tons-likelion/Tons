@@ -87,14 +87,27 @@ def summary_sbj(request, summary_id):
 
     return redirect('article:detail', summary.belongsto_article.id)
 
-def article_stars(request, article_id):
-    article = get_object_or_404(Article, pk = article_id)
-    star_score = request.POST.get('star_score')
-    stars = article.stars
-    count = article.stars_count
-    now_total = stars * count
-    count += 1
-    article.stars_count = count
-    article.stars = ( now_total + star_score ) / count
+def stars(request, article_id):
 
-    return redirect('article:detail', article_id)
+    try:
+        user = request.user
+        profile = Profile.objects.get(user=user)
+        
+    except: # 유저로그인 안했을경우
+        return redirect('accounts:login')
+
+    if request.method == "POST":
+        article = get_object_or_404(Article, pk = article_id)
+        star_score = int(request.POST.get('star_score'))
+        stars = article.stars
+        count = article.stars_count
+        now_total = stars * count
+        count += 1
+        article.stars_count = count
+        stars = ( now_total + star_score ) / count
+        article.stars = round(stars,2)
+        article.save()
+        return redirect('article:detail', article_id)
+
+    else:
+        return render(request, 'article/stars.html')
