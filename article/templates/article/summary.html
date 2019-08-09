@@ -1,12 +1,102 @@
-<h1>page for summary</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>summary</title>
+    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display:400,400i|Noto+Sans+KR|Song+Myung&display=swap&subset=korean" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            background: rgba(244, 244, 244, 0.80);
+        }
 
-<form method="POST" action="">
-    {% csrf_token %}
-    <div>content</div>
-    <div>
-        <textarea name="content" id="content" cols="30" rows="10"></textarea>
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000000;
+        }
+
+        .sum_wrap {
+            width: 487px;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .sum_title {
+            opacity: 0.87;
+            font-family: 'Song Myung', sans-serif;
+            font-size: 44px;
+            color: #000000;
+            letter-spacing: 0;
+            padding-bottom: 24px;
+        }
+
+        .sum_sub_title {
+            opacity: 0.6;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 18px;
+            color: #000000;
+            letter-spacing: 0;
+            padding-bottom: 12px;
+        }
+
+        .sum_input {
+            width: 100%-32;
+            height: 571px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+
+        .sum_input textarea {
+            width: 423px;
+            height: 507px;
+            opacity: 0.6;
+            font-family: 'Noto Sans KR',sans-serif;
+            font-size: 18px;
+            color: #000000;
+            letter-spacing: 0;
+        }
+
+        .sum_submit {
+            width: 100%;
+            height: 92px;
+            background-color: #1D1D1D;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: bold;
+            font-size: 24px;
+            color: #FFFFFF;
+            letter-spacing: 0;
+
+            margin-top: 32px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sum_wrap">
+        <ul>
+            <li class="sum_title">당신의 기사를 작성하세요.</li>
+            <li class="sum_sub_title">당신의 3줄 요약을 톤즈가 도와드립니다.</li>
+            <li class="sum_input"><textarea name="content" id="" cols="30" rows="10"></textarea></li>
+            <li class="sum_submit">완료</li>
+        </ul>
+
     </div>
-    <div>
-        <input type="submit" value="submit">
-    </div>
-</form>
+</body></html>
