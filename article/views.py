@@ -91,7 +91,7 @@ def stars(request, article_id):
     try:
         user = request.user
         profile = Profile.objects.get(user=user)
-        
+
     except: # 유저로그인 안했을경우
         return redirect('accounts:login')
 
