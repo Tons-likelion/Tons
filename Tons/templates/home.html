@@ -28,7 +28,7 @@
             <ul>
                 {% for top10 in top10_article %}
                 <li>
-                    <a href="#">
+                    <a href="{% url 'article:detail' article.id %}">
                         <div class="image_container">
                             <div class="img_wrap_1"><img src="{% static 'img/test_image.png' %}" alt=""></div>
                             <div class="article_title">
