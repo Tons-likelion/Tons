@@ -81,7 +81,7 @@
                                     <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
                                     </div> -->
                                     <div class="summary_info">
-                                        <p>by 닉네임 <span>Jul 25.2019</span></p>
+                                        <p>{{summary.belongsto_user}} <span>{{summary.pub_date}}</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -131,115 +131,37 @@
 
     <div class="card_container_wrapper">
         <div class="headline">
-            <div class="headline_2">IT 관련 다른 기사는 어떠세요?</div>
+            <div class="headline_2">{{article.category.name}} 관련 다른 기사는 어떠세요?</div>
         </div>
         <div class="card_container">
             <ul>
+                {% for other in other_articles%}
                 <li>
-                    <a href="#">
+                    <a href="{% url 'article:detail' other.id%}">
                         <div class="image_container"><img src="{% static 'img/test_image.png' %}" alt="">
                             <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
+                                {{other.title}}
                             </div>
                         </div>
                         <div class="text">
-                            <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
+                            {% for key, value in best_summ_list.items %}
+                            {% if key == other.id %}
+                            <div class="line_1">{{ value }}</div>
+                            {% endif %}
+                            {% endfor %}
+                            {% comment %} <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
                             </div>
                             <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
                             </div>
                             <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                            </div>
+                            </div> {% endcomment %}
                         </div>
-
                         <div id="writer">
                             <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
+                            <span class="name">{{other.writer}}</span></div>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <div class="image_container"><img src="{% static 'img/test_image.png' %}" alt="">
-                            <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                            </div>
-                        </div>
-                        <div class="text">
-                            <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                            </div>
-                            <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
-                            </div>
-                            <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                            </div>
-                        </div>
-
-                        <div id="writer">
-                            <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="image_container"><img src="{% static 'img/test_image.png' %}" alt="">
-                            <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                            </div>
-                        </div>
-                        <div class="text">
-                            <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                            </div>
-                            <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
-                            </div>
-                            <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                            </div>
-                        </div>
-
-                        <div id="writer">
-                            <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="image_container"><img src="{% static 'img/test_image.png' %}" alt="">
-                            <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                            </div>
-                        </div>
-                        <div class="text">
-                            <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                            </div>
-                            <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
-                            </div>
-                            <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                            </div>
-                        </div>
-
-                        <div id="writer">
-                            <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="image_container"><img src="{% static 'img/test_image.png' %}" alt="">
-                            <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                            </div>
-                        </div>
-                        <div class="text">
-                            <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                            </div>
-                            <div class="line_2">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.
-                            </div>
-                            <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                            </div>
-                        </div>
-
-                        <div id="writer">
-                            <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
-                    </a>
-                </li>
+                {% endfor %}
             </ul>
         </div>
     </div>

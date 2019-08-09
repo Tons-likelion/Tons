@@ -9,9 +9,22 @@ from accounts.models import Profile
 def detail(request, article_id):
     article = get_object_or_404(Article, pk = article_id)
     summary_list = Summary.objects.filter(belongsto_article=article)
+    other_articles = []
+    best_summ_list = dict()
+
+    for other in Article.objects.filter(category=article.category):
+        if other != article:
+            other_articles.append(other)
+        try:
+            best_summ_list[other.id] = Summary.objects.filter(belongsto_article=other.id).latest('obj_count')
+        except: #요약이 하나도 없을 경우
+            best_summ_list[other.id] = '아직 요약이 없습니다!'
+    
     context = {
         'article':article,
         'summary_list':summary_list,
+        'best_summ_list':best_summ_list,
+        'other_articles':other_articles,
     }
     return render(request,"article/article_detail.html", context)
 
