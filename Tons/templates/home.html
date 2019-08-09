@@ -26,253 +26,37 @@
    <div class="card_container_wrapper">
         <div class="card_container">
             <ul>
-
-                <li class="clue card_width card_check windLoadBefore_2">
+                {% for top10 in top10_article %}
+                <li>
                     <a href="#">
                         <div class="image_container">
                             <div class="img_wrap_1"><img src="{% static 'img/test_image.png' %}" alt=""></div>
                             <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
+                                {{top10.title}}
                             </div>
                         </div>
-                        <div class="text">
-                            <div>
-                                <div class="line_1 underline">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.</div>
+                        <div class="text">                        
+                            {% for key, value in top10_best_summ_list.items %}
+                            {% if key == top10.id %}
+                            <div class="line_1">{{ value }}</div>
+                            {% endif %}
+                            {% endfor %}
+                            {% comment %} <div class="line_1">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
                             </div>
                             <div>
                                 <div class="line_2 underline">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
                                 </div>
                             </div>
-                            <div>
-                                <div class="line_3 underline">천자만홍이 보이는 아름답고 심장의 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                </div>
-                            </div>
+                            <div class="line_3"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
+                            </div> {% endcomment %}
                         </div>
 
                         <div id="writer">
                             <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
+                            <span class="name">{{top10.writer}}</span></div>
                     </a>
                 </li>
-
-                  <li class="clue card_width card_check windLoadBefore_2">
-                    <a href="#">
-                        <div class="image_container">
-                            <div class="img_wrap_1"><img src="{% static 'img/test_image.png' %}" alt=""></div>
-                            <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                            </div>
-                        </div>
-                        <div class="text">
-                            <div>
-                                <div class="line_1 underline">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.</div>
-                            </div>
-                            <div>
-                                <div class="line_2 underline">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                </div>
-                            </div>
-                            <div>
-                                <div class="line_3 underline">천자만홍이 보이는 아름답고 심장의 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="writer">
-                            <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
-                    </a>
-                </li>
- <li class="clue card_width card_check windLoadBefore_2">
-                    <a href="#">
-                        <div class="image_container">
-                            <div class="img_wrap_1"><img src="{% static 'img/test_image.png' %}" alt=""></div>
-                            <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                            </div>
-                        </div>
-                        <div class="text">
-                            <div>
-                                <div class="line_1 underline">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.</div>
-                            </div>
-                            <div>
-                                <div class="line_2 underline">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                </div>
-                            </div>
-                            <div>
-                                <div class="line_3 underline">천자만홍이 보이는 아름답고 심장의 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="writer">
-                            <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
-                    </a>
-                </li>
- <li class="clue card_width card_check windLoadBefore_2">
-                    <a href="#">
-                        <div class="image_container">
-                            <div class="img_wrap_1"><img src="{% static 'img/test_image.png' %}" alt=""></div>
-                            <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                            </div>
-                        </div>
-                        <div class="text">
-                            <div>
-                                <div class="line_1 underline">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.</div>
-                            </div>
-                            <div>
-                                <div class="line_2 underline">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                </div>
-                            </div>
-                            <div>
-                                <div class="line_3 underline">천자만홍이 보이는 아름답고 심장의 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="writer">
-                            <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
-                    </a>
-                </li>
- <li class="clue card_width card_check windLoadBefore_2">
-                    <a href="#">
-                        <div class="image_container">
-                            <div class="img_wrap_1"><img src="{% static 'img/test_image.png' %}" alt=""></div>
-                            <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                            </div>
-                        </div>
-                        <div class="text">
-                            <div>
-                                <div class="line_1 underline">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.</div>
-                            </div>
-                            <div>
-                                <div class="line_2 underline">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                </div>
-                            </div>
-                            <div>
-                                <div class="line_3 underline">천자만홍이 보이는 아름답고 심장의 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="writer">
-                            <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
-                    </a>
-                </li>
- <li class="clue card_width card_check windLoadBefore_2">
-                    <a href="#">
-                        <div class="image_container">
-                            <div class="img_wrap_1"><img src="{% static 'img/test_image.png' %}" alt=""></div>
-                            <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                            </div>
-                        </div>
-                        <div class="text">
-                            <div>
-                                <div class="line_1 underline">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.</div>
-                            </div>
-                            <div>
-                                <div class="line_2 underline">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                </div>
-                            </div>
-                            <div>
-                                <div class="line_3 underline">천자만홍이 보이는 아름답고 심장의 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="writer">
-                            <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
-                    </a>
-                </li>
- <li class="clue card_width card_check windLoadBefore_2">
-                    <a href="#">
-                        <div class="image_container">
-                            <div class="img_wrap_1"><img src="{% static 'img/test_image.png' %}" alt=""></div>
-                            <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                            </div>
-                        </div>
-                        <div class="text">
-                            <div>
-                                <div class="line_1 underline">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.</div>
-                            </div>
-                            <div>
-                                <div class="line_2 underline">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                </div>
-                            </div>
-                            <div>
-                                <div class="line_3 underline">천자만홍이 보이는 아름답고 심장의 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="writer">
-                            <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
-                    </a>
-                </li>
- <li class="clue card_width card_check windLoadBefore_2">
-                    <a href="#">
-                        <div class="image_container">
-                            <div class="img_wrap_1"><img src="{% static 'img/test_image.png' %}" alt=""></div>
-                            <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                            </div>
-                        </div>
-                        <div class="text">
-                            <div>
-                                <div class="line_1 underline">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.</div>
-                            </div>
-                            <div>
-                                <div class="line_2 underline">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                </div>
-                            </div>
-                            <div>
-                                <div class="line_3 underline">천자만홍이 보이는 아름답고 심장의 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="writer">
-                            <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
-                    </a>
-                </li>
- <li class="clue card_width card_check windLoadBefore_2">
-                    <a href="#">
-                        <div class="image_container">
-                            <div class="img_wrap_1"><img src="{% static 'img/test_image.png' %}" alt=""></div>
-                            <div class="article_title">
-                                “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                            </div>
-                        </div>
-                        <div class="text">
-                            <div>
-                                <div class="line_1 underline">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.</div>
-                            </div>
-                            <div>
-                                <div class="line_2 underline">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                </div>
-                            </div>
-                            <div>
-                                <div class="line_3 underline">천자만홍이 보이는 아름답고 심장의 봄바람이다. 수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="writer">
-                            <span class="by">by</span>
-                            <span class="name">ooo기자</span></div>
-                    </a>
-                </li>
-
-
+                {% endfor %}
             </ul>
 
         </div>
@@ -299,17 +83,9 @@
 
                 <div class="category">
                     <ul>
-                    {% if user.is_active %}
-                        <li>IT</li>
-                    {% else %}
-                        <li>oh</li>
-                        <li>oh</li>
-                        <li>oh</li>
-                        <li>oh</li>
-                        <li>oh</li>
-                        <li>oh</li>
-                    {% endif %}
-                        
+                    {% for category in article_by_category.keys %}
+                        <li>{{category.name}}</li>
+                    {% endfor %}
                     </ul>
 
                 </div>
@@ -317,222 +93,37 @@
 
 
             <ul class="category_article">
-                <li class="clue fadein">
+                {% for category,article in article_by_category.items %}
+                {% comment %} 카테고리 별로 별점 높은 기사 하나씩 불러오기 {% endcomment %}
+                <li>
                     <a href="#">
                         <div class="category_article_content">
                             <div class="img_wrap_2">
                                 <img src="{%static 'img/test_photo_2.png'%}" alt=""></div>
                             <div class="category_article_textcontainer">
                                 <div class="catebory_article_title">
-                                    “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
+                                    {{article.title}}
                                 </div>
                                 <div class="text">
-                                    <div class="line_4 underline">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                    </div>
-                                    <div class="line_5 underline">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.치를 봄바람치를 봄바람치를 봄바람치를 봄바람치를 봄바람치를 봄바람
-                                    </div>
-                                    <div class="line_6 underline"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                                    </div>
+                                    {% for key, value in best_summ_list.items %}
+                                    {% if key == article.id %}
+                                    <div class="line_1">{{ value }}</div>
+                                    {% endif %}
+                                    {% endfor %}
                                 </div>
                             </div>
 
                             <div class="category_article_othercontainer">
-                                <div id="category_category">IT</div>
-                                <div id="writer_123">
+                                <div id="category_category">{{category}}</div>
+                                <div id="writer">
                                     <span class="by">by</span>
-                                    <span class="name">ooo기자</span></div>
+                                    <span class="name">{{article.writer}}</span></div>
                             </div>
                         </div>
                     </a>
                 </li>
-
-                <li class="clue fadein">
-                    <a href="#">
-                        <div class="category_article_content">
-                            <div class="img_wrap_2">
-                                <img src="{%static 'img/test_photo_2.png'%}" alt=""></div>
-                            <div class="category_article_textcontainer">
-                                <div class="catebory_article_title">
-                                    “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                                </div>
-                                <div class="text">
-                                    <div class="line_4 underline">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                    </div>
-                                    <div class="line_5 underline">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.치를 봄바람치를 봄바람치를 봄바람치를 봄바람치를 봄바람치를 봄바람
-                                    </div>
-                                    <div class="line_6 underline"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="category_article_othercontainer">
-                                <div id="category_category">IT</div>
-                                <div id="writer_123">
-                                    <span class="by">by</span>
-                                    <span class="name">ooo기자</span></div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-
-                <li class="clue fadein">
-                    <a href="#">
-                        <div class="category_article_content">
-                            <div class="img_wrap_2">
-                                <img src="{%static 'img/test_photo_2.png'%}" alt=""></div>
-                            <div class="category_article_textcontainer">
-                                <div class="catebory_article_title">
-                                    “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                                </div>
-                                <div class="text">
-                                    <div class="line_4 underline">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                    </div>
-                                    <div class="line_5 underline">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.치를 봄바람치를 봄바람치를 봄바람치를 봄바람치를 봄바람치를 봄바람
-                                    </div>
-                                    <div class="line_6 underline"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="category_article_othercontainer">
-                                <div id="category_category">IT</div>
-                                <div id="writer_123">
-                                    <span class="by">by</span>
-                                    <span class="name">ooo기자</span></div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                  <li class="clue fadein">
-                    <a href="#">
-                        <div class="category_article_content">
-                            <div class="img_wrap_2">
-                                <img src="{%static 'img/test_photo_2.png'%}" alt=""></div>
-                            <div class="category_article_textcontainer">
-                                <div class="catebory_article_title">
-                                    “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                                </div>
-                                <div class="text">
-                                    <div class="line_4 underline">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                    </div>
-                                    <div class="line_5 underline">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.치를 봄바람치를 봄바람치를 봄바람치를 봄바람치를 봄바람치를 봄바람
-                                    </div>
-                                    <div class="line_6 underline"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="category_article_othercontainer">
-                                <div id="category_category">IT</div>
-                                <div id="writer_123">
-                                    <span class="by">by</span>
-                                    <span class="name">ooo기자</span></div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                  <li class="clue fadein">
-                    <a href="#">
-                        <div class="category_article_content">
-                            <div class="img_wrap_2">
-                                <img src="{%static 'img/test_photo_2.png'%}" alt=""></div>
-                            <div class="category_article_textcontainer">
-                                <div class="catebory_article_title">
-                                    “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                                </div>
-                                <div class="text">
-                                    <div class="line_4 underline">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                    </div>
-                                    <div class="line_5 underline">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.치를 봄바람치를 봄바람치를 봄바람치를 봄바람치를 봄바람치를 봄바람
-                                    </div>
-                                    <div class="line_6 underline"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="category_article_othercontainer">
-                                <div id="category_category">IT</div>
-                                <div id="writer_123">
-                                    <span class="by">by</span>
-                                    <span class="name">ooo기자</span></div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                  <li class="clue fadein">
-                    <a href="#">
-                        <div class="category_article_content">
-                            <div class="img_wrap_2">
-                                <img src="{%static 'img/test_photo_2.png'%}" alt=""></div>
-                            <div class="category_article_textcontainer">
-                                <div class="catebory_article_title">
-                                    “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                                </div>
-                                <div class="text">
-                                    <div class="line_4 underline">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                    </div>
-                                    <div class="line_5 underline">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.치를 봄바람치를 봄바람치를 봄바람치를 봄바람치를 봄바람치를 봄바람
-                                    </div>
-                                    <div class="line_6 underline"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="category_article_othercontainer">
-                                <div id="category_category">IT</div>
-                                <div id="writer_123">
-                                    <span class="by">by</span>
-                                    <span class="name">ooo기자</span></div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                  <li class="clue fadein">
-                    <a href="#">
-                        <div class="category_article_content">
-                            <div class="img_wrap_2">
-                                <img src="{%static 'img/test_photo_2.png'%}" alt=""></div>
-                            <div class="category_article_textcontainer">
-                                <div class="catebory_article_title">
-                                    “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                                </div>
-                                <div class="text">
-                                    <div class="line_4 underline">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                    </div>
-                                    <div class="line_5 underline">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.치를 봄바람치를 봄바람치를 봄바람치를 봄바람치를 봄바람치를 봄바람
-                                    </div>
-                                    <div class="line_6 underline"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="category_article_othercontainer">
-                                <div id="category_category">IT</div>
-                                <div id="writer_123">
-                                    <span class="by">by</span>
-                                    <span class="name">ooo기자</span></div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                  <li class="clue fadein">
-                    <a href="#">
-                        <div class="category_article_content">
-                            <div class="img_wrap_2">
-                                <img src="{%static 'img/test_photo_2.png'%}" alt=""></div>
-                            <div class="category_article_textcontainer">
-                                <div class="catebory_article_title">
-                                    “한국 알리려 왔어요”… 방한한 美 중고교 역사교사
-                                </div>
-                                <div class="text">
-                                    <div class="line_4 underline">수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.수 가치를 수 가치를 꽃이 위하여서. 용기가 말이다.
-                                    </div>
-                                    <div class="line_5 underline">황금시대의 가는 뛰노는 발휘하기 가치를 봄바람이다.치를 봄바람치를 봄바람치를 봄바람치를 봄바람치를 봄바람치를 봄바람
-                                    </div>
-                                    <div class="line_6 underline"> 천자만홍이 보이는 아름답고 심장의 봄바람이다.
-                                    </div>
-                                </div>
-                            </div>
+                {% endfor %}
+            
 
                             <div class="category_article_othercontainer">
                                 <div id="category_category">IT</div>
@@ -545,7 +136,6 @@
                 </li>
             </ul>
 
-             <div class="nomore1 fadein">더 이상 기사가 없습니다.</div>
         </div>
     </div>
 

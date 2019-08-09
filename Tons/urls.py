@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', Tons.views.home, name='home'),
+    path('<int:user_id>/', Tons.views.home, name='home'),
 
     path('mypage/<int:user_id>/', category.views.mypage, name='mypage'),
 
